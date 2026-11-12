@@ -395,7 +395,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     </div>
     <div class="table-wrap">
       <table>
-        <thead><tr><th data-i="t_name">Solvent</th><th><bdi>CAS no.</bdi></th><th data-i="t_den">Density ≈ kg/L</th><th data-i="t_use">Typical use</th><th data-i="t_pack">Packs</th></tr></thead>
+        <thead><tr><th data-i="t_name">Solvent</th><th><bdi>CAS no.</bdi></th><th data-i="t_den">Density ≈ kg/L</th><th data-i="t_use">Typical use</th></tr></thead>
         <tbody id="cat-body"></tbody>
       </table>
     </div>
@@ -790,9 +790,8 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       td2.dir = "ltr";
       var td3 = document.createElement("td"); td3.className = "num"; td3.textContent = s[3].toFixed(2);
       var td4 = document.createElement("td"); td4.textContent = s[5][lang === "ar" ? 1 : 0];
-      var td5 = document.createElement("td");
-      s[6].forEach(function (p) { var t = document.createElement("span"); t.className = "tag"; t.textContent = lang === "ar" && PACK_AR[p] ? PACK_AR[p] : p; td5.appendChild(t); });
-      tr.append(td1, td2, td3, td4, td5);
+      var td5 = null;
+      tr.append(td1, td2, td3, td4);
       body.appendChild(tr);
     });
   }
