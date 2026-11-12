@@ -200,6 +200,10 @@ html[dir="rtl"] .stats b { text-align: right; }
 html[lang="ar"] .stats b[data-i] { font-family: var(--arabic); direction: rtl; font-size: clamp(28px, 3.6vw, 42px); }
 .stats div > span { font-weight: 500; font-size: 15px; }
 @media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } .stats div:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; } .stats div { padding: 16px 12px; } }
+.fams .col { gap: 10px; }
+.fam-p { color: var(--muted); }
+.col.dark .fam-p { color: #c8ced4; }
+@media (min-width: 901px) { .fams { grid-template-columns: repeat(3, 1fr); } }
 /* converter */
 .convert { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 0; background: var(--ink); color: #fff; border-radius: 10px; overflow: hidden; }
 .convert .lab { padding: 22px; background: var(--amber); color: var(--ink); display: grid; align-content: center; gap: 2px; min-width: 190px; }
@@ -308,7 +312,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Bakhos Trading"><svg viewBox="0 0 612 354" role="img" aria-label="Bakhos Trading"><use href="#logo"></use></svg></a>
     <nav aria-label="Sections">
-      <a href="#catalogue" data-i="nav_cat">Catalogue</a>
+      <a href="#catalogue" data-i="nav_cat">Solvents</a>
       <a href="#thinners" data-i="nav_thin">Thinners</a>
       <a href="#epoxy" data-i="nav_epx">Epoxy</a>
       <a href="#paint" data-i="nav_pnt">Paint</a>
@@ -382,33 +386,16 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
 <section class="block" id="catalogue">
   <div class="wrap">
     <div class="head">
-      <h2 data-i="cat_h">Solvent catalogue</h2>
-      <p data-i="cat_p">Our regular grades. We quote every order individually on the day, by grade, quantity and pack. If you need a solvent that isn't listed, ask: we source it.</p>
+      <h2 data-i="cat_h">Chemical solvents</h2>
+      <p data-i="cat_p">We import and stock industrial solvents in every main family, and quote each order on the day by grade and quantity. Safety data sheets are available for every product.</p>
     </div>
-    <div class="filters" role="group" aria-label="Filter solvents">
-      <button class="chip" type="button" aria-pressed="true" data-f="all" data-i="f_all">All</button>
-      <button class="chip" type="button" aria-pressed="false" data-f="aromatic" data-i="f_aro">Aromatics</button>
-      <button class="chip" type="button" aria-pressed="false" data-f="ester" data-i="f_est">Esters</button>
-      <button class="chip" type="button" aria-pressed="false" data-f="alcohol" data-i="f_alc">Alcohols &amp; glycol ethers</button>
-      <button class="chip" type="button" aria-pressed="false" data-f="ketone" data-i="f_ket">Ketones</button>
-      <button class="chip" type="button" aria-pressed="false" data-f="aliphatic" data-i="f_ali">Aliphatics</button>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th data-i="t_name">Solvent</th><th><bdi>CAS no.</bdi></th><th data-i="t_den">Density ≈ kg/L</th><th data-i="t_use">Typical use</th></tr></thead>
-        <tbody id="cat-body"></tbody>
-      </table>
-    </div>
-    <p class="note" data-i="cat_note">Densities are typical values at 20 °C, for estimating only. Safety data sheets (SDS) are available for every product on request.</p>
-
-    <div class="convert" aria-label="Litres and kilograms calculator">
-      <div class="lab"><b data-i="conv_h">Litres ⇄ kg</b><span data-i="conv_s">Order in either unit</span></div>
-      <div class="row">
-        <div class="field"><label for="cv-sol" data-i="conv_sol">Solvent</label><select id="cv-sol"></select></div>
-        <div class="field"><label for="cv-l" data-i="conv_l">Litres</label><input id="cv-l" type="number" min="0" step="any" inputmode="decimal" value="200"></div>
-        <div class="field"><label for="cv-kg" data-i="conv_kg">Kilograms</label><input id="cv-kg" type="number" min="0" step="any" inputmode="decimal"></div>
-        <div class="out" id="cv-out"></div>
-      </div>
+    <div class="cols fams">
+      <div class="col"><h3 data-i="fam1">Aromatic solvents</h3><p class="fam-p" data-i="fam1p">For alkyd and industrial paints, lacquers and thinners.</p></div>
+      <div class="col"><h3 data-i="fam2">Esters &amp; acetates</h3><p class="fam-p" data-i="fam2p">Fast and medium-evaporating solvents for lacquers, inks, PU and nitro systems.</p></div>
+      <div class="col"><h3 data-i="fam3">Alcohols &amp; glycol ethers</h3><p class="fam-p" data-i="fam3p">For thinner blends, inks and cleaning, and to control flow and drying.</p></div>
+      <div class="col"><h3 data-i="fam4">Aliphatic solvents</h3><p class="fam-p" data-i="fam4p">White spirit for paint thinning, cleaning and degreasing.</p></div>
+      <div class="col"><h3 data-i="fam5">Paint thinners</h3><p class="fam-p" data-i="fam5p">M1, T1S, T1, 2K and cleaning thinner, blended in Zouk Mosbeh.</p></div>
+      <div class="col dark"><h3 data-i="fam6">Any other grade</h3><p class="fam-p" data-i="fam6p">Sourced on request. Tell us the solvent and the quantity you need.</p></div>
     </div>
   </div>
 </section>
@@ -596,19 +583,13 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   var PHONE = "9613295599"; var EMAIL = "info@bakhostrading.net";
   // name, Arabic name, CAS, density kg/L at 20 °C (typical), family, use (en/ar), packs
   var SOLVENTS = [
-    ["White spirit", "وايت سبيريت", "grade-dependent", 0.78, "aliphatic", ["Paint thinning, cleaning, degreasing", "تخفيف الدهانات والتنظيف وإزالة الشحوم"], ["20×1 L", "20 L", "200 L", "Bulk"]],
-    ["Toluene", "تولوين", "108-88-3", 0.87, "aromatic", ["Thinners, lacquers, adhesives", "الثنر واللاكيه والمواد اللاصقة"], ["200 L", "Bulk"]],
-    ["Xylene (mixed)", "زيلين", "1330-20-7", 0.86, "aromatic", ["Alkyd & industrial paints, thinners", "الدهانات الألكيدية والصناعية والثنر"], ["200 L", "Bulk"]],
-    ["Isobutanol", "أيزوبيوتانول", "78-83-1", 0.80, "alcohol", ["Coatings, inks, thinner blends; slows evaporation", "الطلاءات والأحبار وخلطات الثنر؛ يبطئ التبخر"], ["200 L"]],
-    ["Isopropyl alcohol (IPA)", "كحول الأيزوبروبيل", "67-63-0", 0.79, "alcohol", ["Cleaning, inks, thinner blends", "التنظيف والأحبار وخلطات الثنر"], ["20 L", "200 L"]],
-    ["Butyl glycol (2-butoxyethanol)", "بيوتيل جلايكول", "111-76-2", 0.90, "alcohol", ["Slows drying, improves flow in paints", "يبطئ الجفاف ويحسّن انسيابية الدهان"], ["200 L"]],
-    ["Methyl acetate", "أسيتات الميثيل", "79-20-9", 0.93, "ester", ["Fast thinners, nitro systems", "الثنر سريع التبخر وأنظمة النيترو"], ["200 L", "Bulk"]],
-    ["Ethyl acetate", "أسيتات الإيثيل", "141-78-6", 0.90, "ester", ["Lacquers, inks, adhesives", "اللاكيه والأحبار والمواد اللاصقة"], ["200 L"]],
-    ["n-Butyl acetate", "أسيتات البيوتيل", "123-86-4", 0.88, "ester", ["PU & nitro thinners, coatings", "ثنر البولي يوريثان والنيترو والطلاءات"], ["200 L"]],
-    ["Methyl ethyl ketone (MEK)", "ميثيل إيثيل كيتون", "78-93-3", 0.80, "ketone", ["Coatings, adhesives, cleaning", "الطلاءات والمواد اللاصقة والتنظيف"], ["200 L"]]
+    ["Aromatic solvents", "مذيبات عطرية"],
+    ["Esters & acetates", "إسترات وأسيتات"],
+    ["Alcohols & glycol ethers", "كحولات وإيثرات الجلايكول"],
+    ["Aliphatic solvents (white spirit)", "مذيبات أليفاتية (وايت سبيريت)"]
   ];
   var AR = {
-    nav_cat: "الكتالوج",
+    nav_cat: "المذيبات",
     nav_thin: "الثنر",
     nav_epx: "الإيبوكسي",
     nav_pnt: "الدهانات",
@@ -621,8 +602,8 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     cta_quote: "اطلب عرض سعر",
     cta_wa: "واتساب ‎+961 3 295 599",
     s1: "حلول المذيبات الكيميائية", s1l: "توريد وخلط واستشارات فنية", s2: "البيع بالجملة", s2l: "توريد تجاري للمصانع والمحلات والموزعين", s3: "خلطات حسب الطلب", s3l: "ثنر مُعدّ حسب الدهان والمناخ", s4: "التصدير", s4l: "حاويات كاملة إلى سوريا وأفريقيا",
-    cat_h: "كتالوج المذيبات",
-    cat_p: "هذه أصنافنا الأساسية. نسعّر كل طلب في يومه حسب الصنف والكمية ونوع التعبئة. وإن احتجت إلى مذيب غير مدرج هنا، فتواصل معنا لتوفيره.",
+    cat_h: "المذيبات الكيميائية",
+    cat_p: "نستورد ونخزّن المذيبات الصناعية من جميع العائلات الرئيسية، ونسعّر كل طلب في يومه حسب الصنف والكمية. صحائف بيانات السلامة متوفرة لجميع المنتجات.",
     f_all: "الكل",
     f_aro: "العطريات",
     f_est: "الإسترات",
@@ -710,6 +691,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     ex1_h: "طريقة الشحن", ex1_1: "حاويات كاملة (FCL)", ex1_2: "براميل أو جالونات أو حاويات IBC أو حمولات مختلطة", ex1_3: "التحميل والختم في ساحتنا في ذوق مصبح", ex1_4: "الوجهات: سوريا وأفريقيا، وأسواق أخرى عند الطلب",
     ex2_h: "المستندات التي نوفرها", ex2_1: "شهادة المنشأ", ex2_2: "قائمة التعبئة", ex2_3: "صحائف بيانات السلامة (SDS)", ex2_4: "الفاتورة التجارية وجميع المستندات الأخرى المطلوبة للتخليص الجمركي",
     ex3_h: "تحتاج إلى حاوية؟", ex3_p: "أخبرنا بالمنتجات والكميات وميناء الوصول، وسنرد عليك بالسعر وموعد التحميل.", ex_btn: "اطلب عرض سعر للتصدير",
+    fam1: "مذيبات عطرية", fam1p: "للدهانات الألكيدية والصناعية واللاكيه والثنر.", fam2: "إسترات وأسيتات", fam2p: "مذيبات سريعة ومتوسطة التبخر للاكيه والأحبار وأنظمة البولي يوريثان والنيترو.", fam3: "كحولات وإيثرات الجلايكول", fam3p: "لخلطات الثنر والأحبار والتنظيف، وللتحكم في الانسيابية والجفاف.", fam4: "مذيبات أليفاتية", fam4p: "وايت سبيريت لتخفيف الدهانات والتنظيف وإزالة الشحوم.", fam5: "ثنر الدهانات", fam5p: "M1 وT1S وT1 و2K وثنر التنظيف، نخلطها في ذوق مصبح.", fam6: "أي صنف آخر", fam6p: "نوفّره عند الطلب. أخبرنا بالمذيب والكمية المطلوبة.",
     sup_h: "ما نوفّره",
     sup_p: "مورّد واحد للمذيب والمادة الخام ومواد التشطيب.",
     c1_h: "المذيبات الصناعية",
@@ -774,63 +756,15 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     EN[el.getAttribute("data-i")] = el.hasAttribute("data-html") ? el.innerHTML : el.textContent;
   });
 
-  // catalogue
-  var body = document.getElementById("cat-body"), filter = "all";
-  function renderTable() {
-    body.textContent = "";
-    SOLVENTS.forEach(function (s) {
-      if (filter !== "all" && s[4] !== filter) return;
-      var tr = document.createElement("tr");
-      var td1 = document.createElement("td");
-      var nm = document.createElement("div"); nm.className = "nm"; nm.textContent = lang === "ar" ? s[1] : s[0];
-      var sub = document.createElement("div"); sub.className = "ar-nm"; sub.textContent = lang === "ar" ? s[0] : s[1];
-      td1.append(nm, sub);
-      var td2 = document.createElement("td"); td2.className = "num"; td2.textContent = s[2] === "grade-dependent" ? (lang === "ar" ? "حسب الصنف" : "by grade") : s[2];
-      if (s[2] === "grade-dependent" && lang === "ar") td2.style.fontFamily = "var(--arabic)";
-      td2.dir = "ltr";
-      var td3 = document.createElement("td"); td3.className = "num"; td3.textContent = s[3].toFixed(2);
-      var td4 = document.createElement("td"); td4.textContent = s[5][lang === "ar" ? 1 : 0];
-      var td5 = null;
-      tr.append(td1, td2, td3, td4);
-      body.appendChild(tr);
-    });
-  }
-  document.querySelectorAll(".chip").forEach(function (c) {
-    c.addEventListener("click", function () {
-      filter = c.getAttribute("data-f");
-      document.querySelectorAll(".chip").forEach(function (x) { x.setAttribute("aria-pressed", x === c ? "true" : "false"); });
-      renderTable();
-    });
-  });
-
-  // converter
-  var cvSol = document.getElementById("cv-sol"), cvL = document.getElementById("cv-l"), cvKg = document.getElementById("cv-kg"), cvOut = document.getElementById("cv-out");
+  // quote product list
   function fillSelects() {
-    [cvSol, document.getElementById("q-prod")].forEach(function (sel, i) {
-      var keep = sel.value; sel.textContent = "";
-      SOLVENTS.forEach(function (s, k) { var o = document.createElement("option"); o.value = String(k); o.textContent = lang === "ar" ? s[1] : s[0]; sel.appendChild(o); });
-      if (i === 1) {
-        [["M1", lang === "ar" ? "ثنر M1 (ممتاز)" : "Thinner M1 (premium)"], ["T1S", lang === "ar" ? "ثنر T1S (جودة عالية)" : "Thinner T1S (high grade)"], ["T1", lang === "ar" ? "ثنر T1 (قياسي)" : "Thinner T1 (standard)"], ["wash", lang === "ar" ? "ثنر تنظيف" : "Cleaning thinner"], ["2K", lang === "ar" ? "ثنر 2K للسيارات" : "2K car thinner"], ["epoxy-resin", lang === "ar" ? "راتنج إيبوكسي (مادة أولية)" : "Epoxy resin (raw)"], ["epoxy-hardener", lang === "ar" ? "مصلّب إيبوكسي" : "Epoxy hardener (raw)"], ["epoxy-system", lang === "ar" ? "إيبوكسي جاهز للتطبيق" : "Ready-to-apply epoxy"], ["bitumen", lang === "ar" ? "لفائف عزل بيتومينية" : "Bitumen membrane rolls"], ["paint", lang === "ar" ? "دهانات ومواد تشطيب" : "Paint & wall finishing"], ["custom", lang === "ar" ? "ثنر خاص" : "Custom thinner"], ["other", lang === "ar" ? "منتج آخر (اذكره في الملاحظات)" : "Other (write it below)"]]
+    var sel = document.getElementById("q-prod");
+    var keep = sel.value; sel.textContent = "";
+    SOLVENTS.forEach(function (s, k) { var o = document.createElement("option"); o.value = "fam" + k; o.textContent = lang === "ar" ? s[1] : s[0]; sel.appendChild(o); });
+    [["M1", lang === "ar" ? "ثنر M1 (ممتاز)" : "Thinner M1 (premium)"], ["T1S", lang === "ar" ? "ثنر T1S (جودة عالية)" : "Thinner T1S (high grade)"], ["T1", lang === "ar" ? "ثنر T1 (قياسي)" : "Thinner T1 (standard)"], ["wash", lang === "ar" ? "ثنر تنظيف" : "Cleaning thinner"], ["2K", lang === "ar" ? "ثنر 2K للسيارات" : "2K car thinner"], ["epoxy-resin", lang === "ar" ? "راتنج إيبوكسي (مادة أولية)" : "Epoxy resin (raw)"], ["epoxy-hardener", lang === "ar" ? "مصلّب إيبوكسي" : "Epoxy hardener (raw)"], ["epoxy-system", lang === "ar" ? "إيبوكسي جاهز للتطبيق" : "Ready-to-apply epoxy"], ["bitumen", lang === "ar" ? "لفائف عزل بيتومينية" : "Bitumen membrane rolls"], ["paint", lang === "ar" ? "دهانات ومواد تشطيب" : "Paint & wall finishing"], ["custom", lang === "ar" ? "ثنر خاص" : "Custom thinner"], ["other", lang === "ar" ? "منتج آخر (اذكره في الملاحظات)" : "Other (write it below)"]]
           .forEach(function (p) { var o = document.createElement("option"); o.value = p[0]; o.textContent = p[1]; sel.appendChild(o); });
-      }
-      if (keep) sel.value = keep;
-    });
+    if (keep) sel.value = keep;
   }
-  var lastEdited = "l";
-  function convert() {
-    var d = SOLVENTS[+cvSol.value || 0][3];
-    if (lastEdited === "l") { var l = parseFloat(cvL.value); cvKg.value = isFinite(l) ? +(l * d).toFixed(1) : ""; }
-    else { var k = parseFloat(cvKg.value); cvL.value = isFinite(k) ? +(k / d).toFixed(1) : ""; }
-    var litres = parseFloat(cvL.value) || 0;
-    var drums = litres / 200;
-    cvOut.textContent = "";
-    var big = document.createTextNode((lang === "ar" ? "≈ " + drums.toFixed(1) + " برميل ٢٠٠ لتر" : "≈ " + drums.toFixed(1) + " × 200 L drums"));
-    var small = document.createElement("small"); small.textContent = (lang === "ar" ? "عند كثافة " : "at a density of ") + d.toFixed(2) + " kg/L";
-    cvOut.append(big, small);
-  }
-  cvL.addEventListener("input", function () { lastEdited = "l"; convert(); });
-  cvKg.addEventListener("input", function () { lastEdited = "kg"; convert(); });
-  cvSol.addEventListener("change", convert);
 
   // quote → WhatsApp
   var qIds = ["q-name", "q-co", "q-prod", "q-qty", "q-unit", "q-pack", "q-note"];
@@ -873,7 +807,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     document.getElementById("ex-wa").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "طلب عرض سعر للتصدير - باخوس للتجارة\nالمنتجات:\nالكميات:\nميناء الوصول:" : "Export quote request - Bakhos Trading\nProducts:\nQuantities:\nDestination port:");
     document.getElementById("wa-float").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:");
     document.title = lang === "ar" ? "باخوس للتجارة – مذيبات وثنر وإيبوكسي | ذوق مصبح، لبنان" : "Bakhos Trading – Solvents, Thinners, Epoxy & Paint Raw Materials | Zouk Mosbeh, Lebanon";
-    renderTable(); fillSelects(); convert(); updateQuote();
+    fillSelects(); updateQuote();
   }
   document.getElementById("lang").addEventListener("click", function () {
     lang = lang === "ar" ? "en" : "ar";
