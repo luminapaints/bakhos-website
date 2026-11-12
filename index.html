@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bakhos Trading</title>
-<meta name="description" content="Bakhos Trading, Zouk Mosbeh, Lebanon: industrial solvents, custom thinners and paint raw materials, from 1-litre bottles to 20-tonne ISO tanks.">
+<meta name="description" content="Bakhos Trading, Zouk Mosbeh, Lebanon: industrial solvents, custom thinners, epoxy resins and hardeners, bitumen membranes and paint raw materials, from 1-litre bottles to 20-tonne ISO tanks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -145,6 +145,15 @@ html[lang="ar"] .col h3 { text-transform: none; font-size: 22px; }
 .col ul { margin: 0; padding-inline-start: 18px; display: grid; gap: 4px; }
 .col li::marker { color: var(--amber); }
 @media (max-width: 900px) { .cols { grid-template-columns: 1fr; } }
+.cols.two-up { grid-template-columns: repeat(2, 1fr); }
+@media (max-width: 900px) { .cols.two-up { grid-template-columns: 1fr; } }
+.col .sub { font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .08em; color: var(--amber-deep); }
+html[lang="ar"] .col .sub { font-family: var(--arabic); letter-spacing: 0; font-size: 13px; }
+.col.dark { background: var(--ink); color: #fff; border-color: var(--ink); }
+.col.dark li { color: #c8ced4; }
+.stock { justify-self: start; display: inline-flex; align-items: center; gap: 6px; font: 600 12px var(--mono); text-transform: uppercase; letter-spacing: .06em; background: #e6f4ea; color: #1e6b34; padding: 4px 10px; border-radius: 99px; }
+.stock::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #2e9a4d; }
+html[lang="ar"] .stock { font-family: var(--arabic); letter-spacing: 0; font-size: 13px; }
 
 /* sourcing band */
 .band { background: var(--ink); color: #fff; }
@@ -205,6 +214,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     <nav aria-label="Sections">
       <a href="#catalogue" data-i="nav_cat">Catalogue</a>
       <a href="#thinners" data-i="nav_thin">Thinners</a>
+      <a href="#epoxy" data-i="nav_epx">Epoxy</a>
       <a href="#supply" data-i="nav_sup">What we supply</a>
       <a href="#quote" data-i="nav_quote">Get a quote</a>
     </nav>
@@ -218,7 +228,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     <div class="grid">
       <div>
         <div class="kicker" data-i="kicker">Zouk Mosbeh · Lebanon · Solvent importer &amp; blender</div>
-        <h1 data-i="h1" data-html>Solvents, thinners <em>&amp; paint raw materials</em></h1>
+        <h1 data-i="h1" data-html>Solvents, thinners, epoxy <em>&amp; paint raw materials</em></h1>
         <p class="lede" data-i="lede">We import industrial solvents from Turkey, the Gulf, Europe and Asia, blend our own thinners, and deliver anywhere in Lebanon, from a 1-litre bottle to a 20-tonne ISO tank.</p>
         <div class="cta">
           <a class="btn primary" href="#quote" data-i="cta_quote">Request a price</a>
@@ -285,6 +295,23 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <article class="custom"><span class="grade" data-i="g_cust">On request</span><span class="code" data-i="cu_code">Custom</span><p data-i="cu">Tell us the paint, the method and the conditions. We blend for drying speed, finish and climate.</p></article>
     </div>
     <p class="note" data-i="th_note">Also available as a branded 1-litre retail range with bilingual safety labels.</p>
+  </div>
+</section>
+
+<section class="block" id="epoxy" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i="ep_h">Epoxy &amp; waterproofing</h2>
+      <p data-i="ep_p">Epoxy as a raw material for formulators, or as a finished system ready to apply. Plus bitumen membranes for roofs and foundations, from stock in Zouk Mosbeh.</p>
+    </div>
+    <div class="cols">
+      <div class="col"><span class="sub" data-i="ep1_s">Raw material</span><h3 data-i="ep1_h">Epoxy resins &amp; hardeners</h3>
+        <ul><li data-i="ep1_1">Epoxy resin</li><li data-i="ep1_2">Hardeners (curing agents)</li><li data-i="ep1_3">Solvents and thinners for epoxy systems</li><li data-i="ep1_4">For paint factories and formulators</li></ul></div>
+      <div class="col dark"><span class="sub" data-i="ep2_s">Finished product</span><h3 data-i="ep2_h">Ready-to-apply epoxy</h3>
+        <ul><li data-i="ep2_1">Resin + hardener kits, matched</li><li data-i="ep2_2">For floors, coatings and protection</li><li data-i="ep2_3">For contractors and end users</li><li data-i="ep2_4">Advice on mixing and application</li></ul></div>
+      <div class="col"><span class="stock" data-i="stock">In stock</span><h3 data-i="ep3_h">Bitumen membranes</h3>
+        <ul><li data-i="ep3_1">Bituminous waterproofing rolls</li><li data-i="ep3_2">For roofs, terraces and foundations</li><li data-i="ep3_3">Ready for pickup or delivery</li><li data-i="ep3_4">For contractors and builders</li></ul></div>
+    </div>
   </div>
 </section>
 
@@ -390,9 +417,9 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     ["Methyl ethyl ketone (MEK)", "ميثيل إيثيل كيتون", "78-93-3", 0.80, "ketone", ["Coatings, adhesives, cleaning", "الطلاءات، المواد اللاصقة، التنظيف"], ["200 L"]]
   ];
   var AR = {
-    nav_cat: "الكتالوج", nav_thin: "التنر", nav_sup: "منتجاتنا", nav_grp: "المجموعة", nav_quote: "اطلب سعر",
+    nav_cat: "الكتالوج", nav_thin: "التنر", nav_epx: "إيبوكسي", nav_sup: "منتجاتنا", nav_grp: "المجموعة", nav_quote: "اطلب سعر",
     kicker: "ذوق مصبح · لبنان · استيراد وخلط المذيبات",
-    h1: "مذيبات، تنر <em>ومواد أولية للدهانات</em>",
+    h1: "مذيبات، تنر، إيبوكسي <em>ومواد أولية للدهانات</em>",
     lede: "نستورد المذيبات الصناعية من تركيا والخليج وأوروبا وآسيا، ونخلط التنر الخاص بنا، ونوصل إلى كل لبنان، من قنينة ليتر واحد إلى خزان ISO بسعة ٢٠ طن.",
     cta_quote: "اطلب سعر", cta_wa: "واتساب ‎+961 3 295 599",
     s1: "قنينة ليتر", s2: "تنكة وغالون", s3: "برميل حديد", s4: "خزان IBC", s5: "خزان ISO",
@@ -405,6 +432,10 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     m1: "أعلى جودة عنّا، لتطبيق الدهانات أحادية المكوّن (1K).", g_prem: "ممتاز", g_high: "جودة عالية", g_std: "عادي", g_clean: "تنظيف", g_auto: "سيارات", g_cust: "عند الطلب", cl_code: "تنظيف", cl: "تنر تنظيف لمسدسات الرش والعدّة والمعدات.", t1: "الدرجة الاقتصادية لشغل الدهان اليومي.", t1s: "درجة وحدة تحت M1، لشغل دهان منيح بسعر أقل.", k2: "لدهانات السيارات ثنائية المكوّن (2K)، مصمَّم للحرارة العالية.",
     cu_code: "خاص", cu: "قلّنا نوع الدهان وطريقة الشغل والظروف، ومنخلط حسب سرعة الجفاف والتشطيب والطقس.",
     th_note: "متوفر كمان كتشكيلة مفرّق بقناني ليتر بعلامتنا وملصقات سلامة بلغتين.",
+    ep_h: "إيبوكسي وعزل", ep_p: "إيبوكسي كمادة أولية لمصانع الدهان، أو كنظام جاهز للتطبيق. ورولات عزل بيتومين للسطوح والأساسات، من المخزون بذوق مصبح.",
+    ep1_s: "مادة أولية", ep1_h: "راتنج ومصلّب إيبوكسي", ep1_1: "راتنج إيبوكسي", ep1_2: "مصلّبات (هاردنر)", ep1_3: "مذيبات وتنر لأنظمة الإيبوكسي", ep1_4: "لمصانع الدهان والمُصنّعين",
+    ep2_s: "منتج نهائي", ep2_h: "إيبوكسي جاهز للتطبيق", ep2_1: "طقم راتنج ومصلّب متناسق", ep2_2: "للأرضيات والطلاءات والحماية", ep2_3: "للمتعهدين والزبائن مباشرة", ep2_4: "نصايح للخلط والتطبيق",
+    stock: "متوفر", ep3_h: "رولات عزل بيتومين", ep3_1: "رولات عزل بيتومينية", ep3_2: "للسطوح والتراسات والأساسات", ep3_3: "استلام من المحل أو توصيل", ep3_4: "للمتعهدين والبنّائين",
     sup_h: "شو منأمّن", sup_p: "مورّد واحد للمذيب والمادة الأولية ومواد التشطيب.",
     c1_h: "المذيبات الصناعية", c1_1: "مذيبات عطرية وأليفاتية ومؤكسجة", c1_2: "خلطات مذيبات حسب الطلب", c1_3: "أي صنف منأمّنه عند الطلب", c1_4: "سائب أو معبّأ، مع التوصيل",
     c2_h: "مواد أولية للدهانات", c2_1: "ثاني أكسيد التيتانيوم", c2_2: "إضافات بودرة", c2_3: "مجففات على أساس الزركونيوم", c2_4: "لمصانع الدهان والإيبوكسي والبولي يوريثان",
@@ -465,7 +496,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       var keep = sel.value; sel.textContent = "";
       SOLVENTS.forEach(function (s, k) { var o = document.createElement("option"); o.value = String(k); o.textContent = lang === "ar" ? s[1] : s[0]; sel.appendChild(o); });
       if (i === 1) {
-        [["M1", lang === "ar" ? "تنر M1 (ممتاز)" : "Thinner M1 (premium)"], ["T1S", lang === "ar" ? "تنر T1S (جودة عالية)" : "Thinner T1S (high grade)"], ["T1", lang === "ar" ? "تنر T1 (عادي)" : "Thinner T1 (standard)"], ["wash", lang === "ar" ? "تنر تنظيف" : "Cleaning thinner"], ["2K", lang === "ar" ? "تنر 2K للسيارات" : "2K car thinner"], ["custom", lang === "ar" ? "تنر خاص" : "Custom thinner"], ["other", lang === "ar" ? "منتج آخر (اكتب بالملاحظات)" : "Other (write it below)"]]
+        [["M1", lang === "ar" ? "تنر M1 (ممتاز)" : "Thinner M1 (premium)"], ["T1S", lang === "ar" ? "تنر T1S (جودة عالية)" : "Thinner T1S (high grade)"], ["T1", lang === "ar" ? "تنر T1 (عادي)" : "Thinner T1 (standard)"], ["wash", lang === "ar" ? "تنر تنظيف" : "Cleaning thinner"], ["2K", lang === "ar" ? "تنر 2K للسيارات" : "2K car thinner"], ["epoxy-resin", lang === "ar" ? "راتنج إيبوكسي (مادة أولية)" : "Epoxy resin (raw)"], ["epoxy-hardener", lang === "ar" ? "مصلّب إيبوكسي (هاردنر)" : "Epoxy hardener (raw)"], ["epoxy-system", lang === "ar" ? "إيبوكسي جاهز للتطبيق" : "Ready-to-apply epoxy"], ["bitumen", lang === "ar" ? "رولات عزل بيتومين" : "Bitumen membrane rolls"], ["custom", lang === "ar" ? "تنر خاص" : "Custom thinner"], ["other", lang === "ar" ? "منتج آخر (اكتب بالملاحظات)" : "Other (write it below)"]]
           .forEach(function (p) { var o = document.createElement("option"); o.value = p[0]; o.textContent = p[1]; sel.appendChild(o); });
       }
       if (keep) sel.value = keep;
