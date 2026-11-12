@@ -116,10 +116,12 @@ html[lang="ar"] .btn { font-family: var(--arabic); }
 @keyframes rise { from { transform: translateY(24px) rotate(13deg); opacity: .2; } to { transform: rotate(13deg); opacity: 1; } }
 
 /* the scale strip: what we ship in */
-.scale { margin-top: 48px; border-top: 1px solid rgba(255,255,255,.14); display: grid; grid-template-columns: repeat(5, 1fr); }
-.scale > div { padding: 18px 16px 22px; border-inline-start: 1px solid rgba(255,255,255,.14); display: grid; gap: 4px; align-content: end; }
+.scale { margin-top: 48px; border-top: 1px solid rgba(255,255,255,.14); display: grid; grid-template-columns: repeat(4, 1fr); }
+.scale > div { padding: 18px 16px 22px; border-inline-start: 1px solid rgba(255,255,255,.14); display: grid; gap: 6px; align-content: start; }
 .scale > div:first-child { border-inline-start: 0; padding-inline-start: 0; }
-.scale .v { direction: ltr; unicode-bidi: isolate; font-family: var(--display); font-weight: 700; font-size: clamp(26px, 3.4vw, 40px); line-height: 1; }
+.scale .v { font-family: var(--display); font-weight: 700; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.05; text-transform: uppercase; }
+html[lang="ar"] .scale .v { font-family: var(--arabic); text-transform: none; font-size: clamp(19px, 2vw, 24px); line-height: 1.3; }
+.scale .bar-v { width: 36px; }
 .scale .l { color: #9aa3ab; font-size: 14px; }
 .scale .bar-v { height: 6px; background: var(--amber); border-radius: 3px; }
 @media (max-width: 760px) { .hero .grid { grid-template-columns: 1fr; } .hero-mark { display: none; } .scale { grid-template-columns: repeat(2, 1fr); } .scale > div { border-inline-start: 0; border-top: 1px solid rgba(255,255,255,.14); padding-inline-start: 0; } }
@@ -332,12 +334,11 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       </div>
       <figure class="hero-photo"><img src="img/yard-truck.jpg" alt="Bakhos Trading yard in Zouk Mosbeh with IBC totes, a forklift and a truck" width="960" height="1280" fetchpriority="high"><figcaption data-i="cap_hero">Our yard in Zouk Mosbeh</figcaption></figure>
     </div>
-    <div class="scale" aria-label="Pack sizes">
-      <div><span class="bar-v" style="width:8%"></span><span class="v">20 × 1 L</span><span class="l" data-i="s1">Carton of bottles</span></div>
-      <div><span class="bar-v" style="width:16%"></span><span class="v">16–20 L</span><span class="l" data-i="s2">Can &amp; jerrycan</span></div>
-      <div><span class="bar-v" style="width:34%"></span><span class="v">200 L</span><span class="l" data-i="s3">Steel drum</span></div>
-      <div><span class="bar-v" style="width:62%"></span><span class="v">1,000 L</span><span class="l" data-i="s4">IBC tote</span></div>
-      <div><span class="bar-v" style="width:100%"></span><span class="v">FCL</span><span class="l" data-i="s5">Full container</span></div>
+    <div class="scale" aria-label="What we do">
+      <div><span class="bar-v"></span><span class="v" data-i="s1">Chemical solvent solutions</span><span class="l" data-i="s1l">Sourcing, blending and technical advice</span></div>
+      <div><span class="bar-v"></span><span class="v" data-i="s2">Wholesale</span><span class="l" data-i="s2l">Trade supply to factories, shops and distributors</span></div>
+      <div><span class="bar-v"></span><span class="v" data-i="s3">Custom blends</span><span class="l" data-i="s3l">Thinners made to your paint and climate</span></div>
+      <div><span class="bar-v"></span><span class="v" data-i="s4">Export</span><span class="l" data-i="s4l">Full containers to Syria and Africa</span></div>
     </div>
   </div>
 </section>
@@ -619,11 +620,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     lede: "نستورد المذيبات الصناعية من تركيا والخليج ومصر وأوروبا والهند وكوريا والولايات المتحدة، وننتج خلطات الثنر الخاصة بنا، ونوصل إلى جميع المناطق اللبنانية.",
     cta_quote: "اطلب عرض سعر",
     cta_wa: "واتساب ‎+961 3 295 599",
-    s1: "كرتونة ٢٠ عبوة",
-    s2: "جالون وعبوة",
-    s3: "برميل معدني",
-    s4: "حاوية IBC",
-    s5: "حاوية كاملة",
+    s1: "حلول المذيبات الكيميائية", s1l: "توريد وخلط واستشارات فنية", s2: "البيع بالجملة", s2l: "توريد تجاري للمصانع والمحلات والموزعين", s3: "خلطات حسب الطلب", s3l: "ثنر مُعدّ حسب الدهان والمناخ", s4: "التصدير", s4l: "حاويات كاملة إلى سوريا وأفريقيا",
     cat_h: "كتالوج المذيبات",
     cat_p: "هذه أصنافنا الأساسية. نسعّر كل طلب في يومه حسب الصنف والكمية ونوع التعبئة. وإن احتجت إلى مذيب غير مدرج هنا، فتواصل معنا لتوفيره.",
     f_all: "الكل",
