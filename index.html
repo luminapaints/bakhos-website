@@ -204,6 +204,11 @@ html[lang="ar"] .stats b[data-i] { font-family: var(--arabic); direction: rtl; f
 .fam-p { color: var(--muted); }
 .col.dark .fam-p { color: #c8ced4; }
 @media (min-width: 901px) { .fams { grid-template-columns: repeat(3, 1fr); } }
+.sol-statement { display: block; border-top: 2px solid var(--ink); padding-top: 28px; }
+.sol-statement h2 { font-size: clamp(36px, 5vw, 58px); text-transform: uppercase; }
+html[lang="ar"] .sol-statement h2 { text-transform: none; font-size: clamp(30px, 4vw, 44px); }
+.sol-statement p { font-size: 22px; line-height: 1.45; }
+@media (max-width: 760px) { .sol-statement { grid-template-columns: 1fr; gap: 10px; } }
 /* converter */
 .convert { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 0; background: var(--ink); color: #fff; border-radius: 10px; overflow: hidden; }
 .convert .lab { padding: 22px; background: var(--amber); color: var(--ink); display: grid; align-content: center; gap: 2px; min-width: 190px; }
@@ -385,17 +390,8 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
 
 <section class="block" id="catalogue">
   <div class="wrap">
-    <div class="head">
-      <h2 data-i="cat_h">Chemical solvents</h2>
-      <p data-i="cat_p">We import and stock industrial solvents in every main family, and quote each order on the day by grade and quantity. Safety data sheets are available for every product.</p>
-    </div>
-    <div class="cols fams">
-      <div class="col"><h3 data-i="fam1">Aromatic solvents</h3><p class="fam-p" data-i="fam1p">For alkyd and industrial paints, lacquers and thinners.</p></div>
-      <div class="col"><h3 data-i="fam2">Esters &amp; acetates</h3><p class="fam-p" data-i="fam2p">Fast and medium-evaporating solvents for lacquers, inks, PU and nitro systems.</p></div>
-      <div class="col"><h3 data-i="fam3">Alcohols &amp; glycol ethers</h3><p class="fam-p" data-i="fam3p">For thinner blends, inks and cleaning, and to control flow and drying.</p></div>
-      <div class="col"><h3 data-i="fam4">Aliphatic solvents</h3><p class="fam-p" data-i="fam4p">White spirit for paint thinning, cleaning and degreasing.</p></div>
-      <div class="col"><h3 data-i="fam5">Paint thinners</h3><p class="fam-p" data-i="fam5p">M1, T1S, T1, 2K and cleaning thinner, blended in Zouk Mosbeh.</p></div>
-      <div class="col dark"><h3 data-i="fam6">Any other grade</h3><p class="fam-p" data-i="fam6p">Sourced on request. Tell us the solvent and the quantity you need.</p></div>
+    <div class="sol-statement">
+      <h2 data-i="cat_h">Chemical solvents for industrial and paint use</h2>
     </div>
   </div>
 </section>
@@ -583,10 +579,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   var PHONE = "9613295599"; var EMAIL = "info@bakhostrading.net";
   // name, Arabic name, CAS, density kg/L at 20 °C (typical), family, use (en/ar), packs
   var SOLVENTS = [
-    ["Aromatic solvents", "مذيبات عطرية"],
-    ["Esters & acetates", "إسترات وأسيتات"],
-    ["Alcohols & glycol ethers", "كحولات وإيثرات الجلايكول"],
-    ["Aliphatic solvents (white spirit)", "مذيبات أليفاتية (وايت سبيريت)"]
+    ["Chemical solvents", "مذيبات كيميائية"]
   ];
   var AR = {
     nav_cat: "المذيبات",
@@ -602,8 +595,8 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     cta_quote: "اطلب عرض سعر",
     cta_wa: "واتساب ‎+961 3 295 599",
     s1: "حلول المذيبات الكيميائية", s1l: "توريد وخلط واستشارات فنية", s2: "البيع بالجملة", s2l: "توريد تجاري للمصانع والمحلات والموزعين", s3: "خلطات حسب الطلب", s3l: "ثنر مُعدّ حسب الدهان والمناخ", s4: "التصدير", s4l: "حاويات كاملة إلى سوريا وأفريقيا",
-    cat_h: "المذيبات الكيميائية",
-    cat_p: "نستورد ونخزّن المذيبات الصناعية من جميع العائلات الرئيسية، ونسعّر كل طلب في يومه حسب الصنف والكمية. صحائف بيانات السلامة متوفرة لجميع المنتجات.",
+    cat_h: "مذيبات كيميائية للاستخدامات الصناعية والدهانات",
+    cat_p: "مذيبات كيميائية للاستخدامات الصناعية وصناعة الدهانات.",
     f_all: "الكل",
     f_aro: "العطريات",
     f_est: "الإسترات",
