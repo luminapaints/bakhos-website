@@ -18,6 +18,8 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","@id":"http://www.bakhostrading.net/#business","name":"Bakhos Trading","alternateName":"باخوس للتجارة","description":"Importer, blender and distributor of industrial solvents, thinners, epoxy, bitumen membranes and paint raw materials in Zouk Mosbeh, Lebanon.","url":"http://www.bakhostrading.net/","image":"http://www.bakhostrading.net/img/share.jpg","logo":"http://www.bakhostrading.net/favicon.svg","telephone":"+961 3 295 599","email":"info@bakhostrading.net","contactPoint":[{"@type":"ContactPoint","telephone":"+961 3 295 599","contactType":"sales","availableLanguage":["en","ar"]},{"@type":"ContactPoint","telephone":"+961 4 523 435","contactType":"customer service","availableLanguage":["en","ar"]}],"address":{"@type":"PostalAddress","addressLocality":"Zouk Mosbeh","addressRegion":"Keserwan","addressCountry":"LB"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Bakhos%20Trading%20Zouk%20Mosbeh&query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"areaServed":{"@type":"Country","name":"Lebanon"},"currenciesAccepted":"USD","knowsAbout":["Industrial solvents","Thinners","Epoxy resin","Epoxy hardener","Bitumen waterproofing membranes","Paint raw materials","Paint and wall finishing"]}</script>
+
 <meta name="description" content="Bakhos Trading, Zouk Mosbeh, Lebanon: industrial solvents, custom thinners, paints, epoxy resins and hardeners, bitumen membranes and paint raw materials, from 1-litre bottles to 20-tonne ISO tanks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -150,9 +152,23 @@ tbody tr:hover td { background: #fbf7f1; }
 td .nm { font-weight: 600; }
 td .ar-nm { color: var(--muted); font-family: var(--arabic); font-size: 14px; }
 td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.tag { display: inline-block; font: 500 12px var(--mono); padding: 2px 8px; border-radius: 4px; background: #eef0f1; margin: 2px 4px 2px 0; white-space: nowrap; }
+.tag { direction: ltr; unicode-bidi: isolate; display: inline-block; font: 500 12px var(--mono); padding: 2px 8px; border-radius: 4px; background: #eef0f1; margin: 2px 4px 2px 0; white-space: nowrap; }
 .note { color: var(--muted); font-size: 14px; margin-top: 12px; }
 
+@media (max-width: 640px) {
+  .table-wrap { overflow: visible; }
+  table { min-width: 0; }
+  thead { display: none; }
+  tbody tr { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; padding: 14px 16px; border-bottom: 1px solid #e3e6e9; }
+  tbody tr:last-child { border-bottom: 0; }
+  tbody td { padding: 0; border: 0; }
+  tbody td:nth-child(1) { grid-column: 1; }
+  tbody td:nth-child(2) { grid-column: 2; grid-row: 1; text-align: end; color: var(--muted); font-size: 13px; }
+  tbody td:nth-child(2)::before { content: "CAS "; }
+  tbody td:nth-child(3) { display: none; }
+  tbody td:nth-child(4) { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
+  tbody td:nth-child(5) { grid-column: 1 / -1; }
+}
 /* converter */
 .convert { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 0; background: var(--ink); color: #fff; border-radius: 10px; overflow: hidden; }
 .convert .lab { padding: 22px; background: var(--amber); color: var(--ink); display: grid; align-content: center; gap: 2px; min-width: 190px; }
