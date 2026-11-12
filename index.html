@@ -122,6 +122,11 @@ html[lang="ar"] .btn { font-family: var(--arabic); }
 .scale .bar-v { height: 6px; background: var(--amber); border-radius: 3px; }
 @media (max-width: 760px) { .hero .grid { grid-template-columns: 1fr; } .hero-mark { display: none; } .scale { grid-template-columns: repeat(2, 1fr); } .scale > div { border-inline-start: 0; border-top: 1px solid rgba(255,255,255,.14); padding-inline-start: 0; } }
 
+.wa-float { position: fixed; z-index: 30; inset-inline-end: 18px; bottom: 18px; display: inline-flex; align-items: center; gap: 8px; background: #25d366; color: #fff; text-decoration: none; font: 600 15px var(--body); padding: 12px 18px 12px 14px; border-radius: 999px; box-shadow: 0 6px 20px rgba(0,0,0,.25); transition: transform .15s; }
+html[lang="ar"] .wa-float { font-family: var(--arabic); padding: 12px 14px 12px 18px; }
+.wa-float:hover { transform: translateY(-2px); background: #1ebe5b; }
+.wa-float svg { width: 26px; height: 26px; }
+@media (max-width: 600px) { .wa-float span { display: none; } .wa-float { padding: 14px; } }
 /* sections */
 section.block { padding: 72px 0; }
 .head { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: end; margin-bottom: 32px; }
@@ -244,7 +249,7 @@ html[lang="ar"] .fact dt { font-family: var(--arabic); letter-spacing: 0; }
 .ghost-dark:hover { border-color: var(--ink); }
 @media (max-width: 860px) { .quote { grid-template-columns: 1fr; } .qform { grid-template-columns: 1fr; } }
 
-footer { background: var(--ink); color: #9aa3ab; padding: 32px 0; font-size: 14px; }
+footer { background: var(--ink); color: #9aa3ab; padding: 32px 0 96px; font-size: 14px; }
 footer .wrap { display: flex; gap: 20px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
 footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
 </style>
@@ -467,6 +472,10 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
 </section>
 </main>
 
+<a class="wa-float" id="wa-float" href="https://wa.me/9613295599" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8C29 8.7 23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4a10.4 10.4 0 0 1-1.7-5.8C5.1 10 10 5.2 16 5.2S26.9 10 26.9 15.8 22 26.4 16 26.4zm6-7.8c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.7c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6a1.2 1.2 0 0 0-.9.4c-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.3 3.3c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 3.9.8.6-.1 1.9-.8 2.2-1.5s.3-1.4.2-1.5c-.1-.2-.3-.3-.6-.4z"/></svg>
+  <span data-i="wa_float">WhatsApp</span>
+</a>
 <footer>
   <div class="wrap">
     <svg viewBox="0 0 612 354" role="img" aria-label="Bakhos Trading"><use href="#logo"></use></svg>
@@ -633,7 +642,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     p3: "براميل ٢٠٠ لتر",
     p4: "حاوية IBC سعة ١٠٠٠ لتر",
     p5: "سائب / صهريج ISO",
-    q_send: "أرسل عبر واتساب",
+    wa_float: "واتساب", q_send: "أرسل عبر واتساب",
     q_copy: "انسخ الرسالة",
     f_call: "المكتب",
     f_mob: "الجوال وواتساب",
@@ -757,6 +766,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
     });
     document.getElementById("lang").textContent = lang === "ar" ? "English" : "عربي";
+    document.getElementById("wa-float").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:");
     document.title = lang === "ar" ? "باخوس للتجارة – مذيبات وثنر وإيبوكسي | ذوق مصبح، لبنان" : "Bakhos Trading – Solvents, Thinners, Epoxy & Paint Raw Materials | Zouk Mosbeh, Lebanon";
     renderTable(); fillSelects(); convert(); updateQuote();
   }
