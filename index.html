@@ -169,6 +169,26 @@ td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-spa
   tbody td:nth-child(4) { grid-column: 1 / -1; color: var(--muted); font-size: 14px; }
   tbody td:nth-child(5) { grid-column: 1 / -1; }
 }
+.who { display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding: 22px 0; }
+.who-h { font-size: 30px; text-transform: uppercase; }
+html[lang="ar"] .who-h { text-transform: none; font-size: 24px; }
+.who-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 18px; }
+.who-list li { display: grid; gap: 2px; padding-inline-start: 14px; border-inline-start: 3px solid var(--amber); }
+.who-list b { font-weight: 600; font-size: 15px; line-height: 1.3; }
+.who-list span { color: var(--muted); font-size: 13px; line-height: 1.4; }
+@media (max-width: 1000px) { .who { grid-template-columns: 1fr; } .who-list { grid-template-columns: repeat(2, 1fr); } }
+.export { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+.ex-col { background: var(--card); border: 1px solid var(--rule); border-radius: 10px; padding: 24px; display: grid; gap: 12px; align-content: start; }
+.ex-col h3 { font-size: 24px; text-transform: uppercase; }
+html[lang="ar"] .ex-col h3 { text-transform: none; font-size: 21px; }
+.ex-col ul { margin: 0; padding-inline-start: 18px; display: grid; gap: 6px; }
+.ex-col li::marker { color: var(--amber); }
+.ex-cta { background: var(--ink); color: #fff; border-radius: 10px; padding: 24px; display: grid; gap: 12px; align-content: start; }
+.ex-cta b { font-family: var(--display); font-size: 30px; line-height: 1.05; text-transform: uppercase; }
+html[lang="ar"] .ex-cta b { font-family: var(--arabic); text-transform: none; font-size: 22px; }
+.ex-cta p { color: #c8ced4; }
+.ex-cta .btn { justify-self: start; margin-top: 6px; }
+@media (max-width: 900px) { .export { grid-template-columns: 1fr; } }
 /* converter */
 .convert { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 0; background: var(--ink); color: #fff; border-radius: 10px; overflow: hidden; }
 .convert .lab { padding: 22px; background: var(--amber); color: var(--ink); display: grid; align-content: center; gap: 2px; min-width: 190px; }
@@ -282,6 +302,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <a href="#epoxy" data-i="nav_epx">Epoxy</a>
       <a href="#paint" data-i="nav_pnt">Paint</a>
       <a href="#supply" data-i="nav_sup">What we supply</a>
+      <a href="#export" data-i="nav_exp">Export</a>
       <a href="#quote" data-i="nav_quote">Get a quote</a>
     </nav>
     <button class="lang" id="lang" type="button" aria-label="Switch language">عربي</button>
@@ -320,6 +341,21 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <figure class="shot"><img src="img/methyl-acetate.jpg" alt="Labelled 200 litre drum of methyl acetate" width="720" height="1280" loading="lazy" style="object-position:50% 60%"><figcaption data-i="cap2">Methyl acetate, 200 L drums</figcaption></figure>
       <figure class="shot"><img src="img/ibc-yard.jpg" alt="IBC totes stored in the yard" width="960" height="1280" loading="lazy" style="object-position:85% 60%"><figcaption data-i="cap3">IBC totes in stock</figcaption></figure>
       <figure class="shot"><img src="img/truck.jpg" alt="Truck at the warehouse" width="591" height="1047" loading="lazy" style="object-position:70% 50%"><figcaption data-i="cap4">Full-load deliveries</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="who" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="who">
+      <h2 class="who-h" data-i="who_h">Who we supply</h2>
+      <ul class="who-list">
+        <li><b data-i="w1">Paint manufacturers</b><span data-i="w1s">Solvents and raw materials in bulk</span></li>
+        <li><b data-i="w2">Car paint &amp; body shops</b><span data-i="w2s">2K and high-gloss thinners</span></li>
+        <li><b data-i="w3">Paint shops</b><span data-i="w3s">Thinners, paints and finishing products</span></li>
+        <li><b data-i="w4">Local distributors</b><span data-i="w4s">Trade prices on regular volumes</span></li>
+        <li><b data-i="w5">Retail customers</b><span data-i="w5s">From a single litre</span></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -448,6 +484,40 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   </div>
 </section>
 
+<section class="block" id="export">
+  <div class="wrap">
+    <div class="head">
+      <h2 data-i="ex_h">Export</h2>
+      <p data-i="ex_p">We ship full containers of solvents, thinners and epoxy from Lebanon to Syria and to Africa, with every document your customs and your customers need.</p>
+    </div>
+    <div class="export">
+      <div class="ex-col">
+        <h3 data-i="ex1_h">How we ship</h3>
+        <ul>
+          <li data-i="ex1_1">Full container loads (FCL)</li>
+          <li data-i="ex1_2">Drums, pails, IBC totes or mixed loads</li>
+          <li data-i="ex1_3">Loaded and sealed at our yard in Zouk Mosbeh</li>
+          <li data-i="ex1_4">Destinations: Syria and Africa, other markets on request</li>
+        </ul>
+      </div>
+      <div class="ex-col">
+        <h3 data-i="ex2_h">Documents we provide</h3>
+        <ul>
+          <li data-i="ex2_1">Certificate of origin</li>
+          <li data-i="ex2_2">Packing list</li>
+          <li data-i="ex2_3">Safety data sheets (SDS)</li>
+          <li data-i="ex2_4">Commercial invoice and all other documents required for customs</li>
+        </ul>
+      </div>
+      <div class="ex-cta">
+        <b data-i="ex3_h">Need a container?</b>
+        <p data-i="ex3_p">Tell us the products, quantities and destination port. We reply with a price and loading date.</p>
+        <a class="btn primary" id="ex-wa" href="https://wa.me/9613295599" rel="noopener" data-i="ex_btn">Request an export quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="quote" style="padding-top:0">
   <div class="wrap">
     <div class="head">
@@ -480,7 +550,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
         <div class="fact"><dt data-i="f_where">Location</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Bakhos%20Trading%20Zouk%20Mosbeh&amp;query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" data-i="f_where_v">Bakhos Trading, Zouk Mosbeh, Lebanon</a>
           <div class="maplinks"><a class="btn dark small-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bakhos%20Trading&amp;destination_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" data-i="f_dir">Directions</a><a class="btn small-btn ghost-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Bakhos%20Trading%20Zouk%20Mosbeh&amp;query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" data-i="f_map">Open in Google Maps</a></div></dd></div>
         <div class="fact"><dt data-i="f_hours">Hours</dt><dd><span data-i="f_hours_v1">Mon–Fri 8:00–16:30</span><br><span data-i="f_hours_v2">Sat 8:00–13:00 · Sun closed</span></dd></div>
-        <div class="fact"><dt data-i="f_del">Delivery</dt><dd data-i="f_del_v">All of Lebanon, with our own trucks</dd></div>
+        <div class="fact"><dt data-i="f_del">Delivery</dt><dd data-i="f_del_v">All of Lebanon, with our own trucks. Export by full container.</dd></div>
         <div class="fact"><dt data-i="f_pay">Pricing</dt><dd data-i="f_pay_v">In US dollars, quoted per order</dd></div>
       </dl>
     </div>
@@ -621,6 +691,11 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     cap_th: "إيبوكسي في جالونات، حاوية كاملة مُصدَّرة إلى أفريقيا",
     cap_ep: "عزل بيتوميني على جدار أساسات، مع توصيلنا إلى الموقع",
     cap_pw: "ثنر 777 عالي اللمعان، متوفر",
+    nav_exp: "التصدير", who_h: "عملاؤنا", w1: "مصانع الدهانات", w1s: "مذيبات ومواد خام بالجملة", w2: "ورش دهان السيارات", w2s: "ثنر 2K وثنر عالي اللمعان", w3: "محلات الدهانات", w3s: "ثنر ودهانات ومواد تشطيب", w4: "الموزعون المحليون", w4s: "أسعار جملة للكميات المنتظمة", w5: "عملاء التجزئة", w5s: "ابتداءً من لتر واحد",
+    ex_h: "التصدير", ex_p: "نشحن حاويات كاملة من المذيبات والثنر والإيبوكسي من لبنان إلى سوريا وأفريقيا، مع جميع المستندات التي تحتاجها الجمارك ويحتاجها عملاؤك.",
+    ex1_h: "طريقة الشحن", ex1_1: "حاويات كاملة (FCL)", ex1_2: "براميل أو جالونات أو حاويات IBC أو حمولات مختلطة", ex1_3: "التحميل والختم في ساحتنا في ذوق مصبح", ex1_4: "الوجهات: سوريا وأفريقيا، وأسواق أخرى عند الطلب",
+    ex2_h: "المستندات التي نوفرها", ex2_1: "شهادة المنشأ", ex2_2: "قائمة التعبئة", ex2_3: "صحائف بيانات السلامة (SDS)", ex2_4: "الفاتورة التجارية وجميع المستندات الأخرى المطلوبة للتخليص الجمركي",
+    ex3_h: "تحتاج إلى حاوية؟", ex3_p: "أخبرنا بالمنتجات والكميات وميناء الوصول، وسنرد عليك بالسعر وموعد التحميل.", ex_btn: "اطلب عرض سعر للتصدير",
     sup_h: "ما نوفّره",
     sup_p: "مورّد واحد للمذيب والمادة الخام ومواد التشطيب.",
     c1_h: "المذيبات الصناعية",
@@ -672,7 +747,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     f_hours_v1: "الاثنين–الجمعة ٨:٠٠–١٦:٣٠",
     f_hours_v2: "السبت ٨:٠٠–١٣:٠٠ · الأحد مغلق",
     f_del: "التوصيل",
-    f_del_v: "إلى جميع المناطق اللبنانية بشاحناتنا",
+    f_del_v: "إلى جميع المناطق اللبنانية بشاحناتنا، والتصدير بحاويات كاملة.",
     f_pay: "الأسعار",
     f_pay_v: "بالدولار الأمريكي، حسب كل طلب",
     foot: "باخوس للتجارة · ذوق مصبح، لبنان"
@@ -782,6 +857,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
     });
     document.getElementById("lang").textContent = lang === "ar" ? "English" : "عربي";
+    document.getElementById("ex-wa").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "طلب عرض سعر للتصدير - باخوس للتجارة\nالمنتجات:\nالكميات:\nميناء الوصول:" : "Export quote request - Bakhos Trading\nProducts:\nQuantities:\nDestination port:");
     document.getElementById("wa-float").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:");
     document.title = lang === "ar" ? "باخوس للتجارة – مذيبات وثنر وإيبوكسي | ذوق مصبح، لبنان" : "Bakhos Trading – Solvents, Thinners, Epoxy & Paint Raw Materials | Zouk Mosbeh, Lebanon";
     renderTable(); fillSelects(); convert(); updateQuote();
