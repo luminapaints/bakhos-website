@@ -185,13 +185,15 @@ html[lang="ar"] .stock { font-family: var(--arabic); letter-spacing: 0; font-siz
 
 /* sourcing band */
 .band { background: var(--ink); color: #fff; }
-.origins { display: grid; grid-template-columns: repeat(6, 1fr); border-top: 1px solid rgba(255,255,255,.14); }
-.origins div { padding: 18px 14px 4px 0; display: grid; gap: 2px; }
-.origins b { font-family: var(--display); font-size: 28px; text-transform: uppercase; }
+.origins { display: grid; grid-template-columns: repeat(9, 1fr); gap: 1px; background: rgba(255,255,255,.14); border-top: 1px solid rgba(255,255,255,.14); }
+.origins div { background: var(--ink); padding: 20px 14px 16px; display: grid; gap: 8px; align-content: start; }
+.origins .flag { width: 48px; height: 36px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(255,255,255,.18); display: block; }
+.origins .home b { color: var(--amber); }
+.origins b { font-family: var(--display); font-size: 21px; line-height: 1.05; text-transform: uppercase; }
 html[lang="ar"] .origins b { font-family: var(--arabic); text-transform: none; font-size: 22px; }
 .origins span { color: #9aa3ab; font-size: 14px; }
 .band .head p { color: #c8ced4; }
-@media (max-width: 760px) { .origins { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 1000px) { .origins { grid-template-columns: repeat(3, 1fr); } }
 
 /* group */
 .group { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
@@ -258,7 +260,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <div>
         <div class="kicker" data-i="kicker">Zouk Mosbeh · Lebanon · Solvent importer &amp; blender</div>
         <h1 data-i="h1" data-html>Solvents, thinners, epoxy <em>&amp; paint raw materials</em></h1>
-        <p class="lede" data-i="lede">We import industrial solvents from Turkey, the Gulf, Europe and Asia, blend our own thinners, and deliver anywhere in Lebanon, from a 1-litre bottle to a 20-tonne ISO tank.</p>
+        <p class="lede" data-i="lede">We import industrial solvents from Turkey, the Gulf, Egypt, Europe, India, Korea and the USA, blend our own thinners, and deliver anywhere in Lebanon, from a 1-litre bottle to a 20-tonne ISO tank.</p>
         <div class="cta">
           <a class="btn primary" href="#quote" data-i="cta_quote">Request a price</a>
           <a class="btn ghost wa-link" href="https://wa.me/9613295599" rel="noopener" data-i="cta_wa">WhatsApp +961 3 295 599</a>
@@ -398,12 +400,15 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <p data-i="src_p">We buy direct from producers and keep stock in Lebanon, so your production doesn't stop when a ship is late.</p>
     </div>
     <div class="origins">
-      <div><b data-i="o1">Turkey</b><span data-i="o1s">Solvents &amp; glycol ethers</span></div>
-      <div><b data-i="o2">Gulf</b><span data-i="o2s">Aromatics</span></div>
-      <div><b data-i="o3">Europe</b><span data-i="o3s">Specialty grades</span></div>
-      <div><b data-i="o4">Asia</b><span data-i="o4s">Glycol ethers &amp; esters</span></div>
-      <div><b data-i="o5">Americas</b><span data-i="o5s">On request</span></div>
-      <div><b data-i="o6">Lebanon</b><span data-i="o6s">Stock &amp; blending</span></div>
+      <div><img class="flag" src="img/flags/tr.svg" alt="" width="48" height="36"><b data-i="o_tr">Turkey</b></div>
+      <div><img class="flag" src="img/flags/sa.svg" alt="" width="48" height="36"><b data-i="o_sa">Saudi Arabia</b></div>
+      <div><img class="flag" src="img/flags/ae.svg" alt="" width="48" height="36"><b data-i="o_ae">UAE</b></div>
+      <div><img class="flag" src="img/flags/eg.svg" alt="" width="48" height="36"><b data-i="o_eg">Egypt</b></div>
+      <div><img class="flag" src="img/flags/nl.svg" alt="" width="48" height="36"><b data-i="o_nl">Netherlands</b></div>
+      <div><img class="flag" src="img/flags/in.svg" alt="" width="48" height="36"><b data-i="o_in">India</b></div>
+      <div><img class="flag" src="img/flags/kr.svg" alt="" width="48" height="36"><b data-i="o_kr">South Korea</b></div>
+      <div><img class="flag" src="img/flags/us.svg" alt="" width="48" height="36"><b data-i="o_us">USA</b></div>
+      <div class="home"><img class="flag" src="img/flags/lb.svg" alt="" width="48" height="36"><b data-i="o_lb">Lebanon</b><span data-i="o6s">Stock &amp; blending</span></div>
     </div>
   </div>
 </section>
@@ -485,7 +490,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     nav_quote: "طلب عرض سعر",
     kicker: "ذوق مصبح · لبنان · استيراد المذيبات وخلطها",
     h1: "مذيبات، ثنر، إيبوكسي <em>ومواد خام للدهانات</em>",
-    lede: "نستورد المذيبات الصناعية من تركيا والخليج وأوروبا وآسيا، وننتج خلطات الثنر الخاصة بنا، ونوصل إلى جميع المناطق اللبنانية، من عبوة لتر واحد إلى صهريج ISO بسعة ٢٠ طنًا.",
+    lede: "نستورد المذيبات الصناعية من تركيا والخليج ومصر وأوروبا والهند وكوريا والولايات المتحدة، وننتج خلطات الثنر الخاصة بنا، ونوصل إلى جميع المناطق اللبنانية، من عبوة لتر واحد إلى صهريج ISO بسعة ٢٠ طنًا.",
     cta_quote: "اطلب عرض سعر",
     cta_wa: "واتساب ‎+961 3 295 599",
     s1: "عبوة لتر",
@@ -589,20 +594,9 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     c2_2: "إضافات بودرة",
     c2_3: "مجففات على أساس الزركونيوم",
     c2_4: "لمصانع الدهانات والإيبوكسي والبولي يوريثان",
+    o_tr: "تركيا", o_sa: "السعودية", o_ae: "الإمارات", o_eg: "مصر", o_nl: "هولندا", o_in: "الهند", o_kr: "كوريا الجنوبية", o_us: "الولايات المتحدة", o_lb: "لبنان", o6s: "مخزون وخلط",
     src_h: "مصادر من حول العالم",
     src_p: "نشتري مباشرة من المنتجين ونحتفظ بمخزون في لبنان، حتى لا يتوقف إنتاجك إذا تأخرت شحنة.",
-    o1: "تركيا",
-    o1s: "مذيبات وجلايكول",
-    o2: "الخليج",
-    o2s: "العطريات",
-    o3: "أوروبا",
-    o3s: "أصناف متخصصة",
-    o4: "آسيا",
-    o4s: "جلايكول وإسترات",
-    o5: "الأمريكتان",
-    o5s: "حسب الطلب",
-    o6: "لبنان",
-    o6s: "مخزون وخلط",
     grp_h: "مجموعة واحدة، سلسلة توريد واحدة",
     grp_p: "باخوس للتجارة هي نقطة البداية، وموادها الخام تغذّي علامة الدهانات وفرق المقاولات لدينا.",
     g1r: "استيراد · خلط · توزيع",
