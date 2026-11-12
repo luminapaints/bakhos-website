@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ar_AR">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","@id":"http://www.bakhostrading.net/#business","name":"Bakhos Trading","alternateName":"باخوس للتجارة","description":"Importer, blender and distributor of industrial solvents, thinners, epoxy, bitumen membranes and paint raw materials in Zouk Mosbeh, Lebanon.","url":"http://www.bakhostrading.net/","image":"http://www.bakhostrading.net/img/share.jpg","logo":"http://www.bakhostrading.net/favicon.svg","telephone":"+961 3 295 599","email":"info@bakhostrading.net","contactPoint":[{"@type":"ContactPoint","telephone":"+961 3 295 599","contactType":"sales","availableLanguage":["en","ar"]},{"@type":"ContactPoint","telephone":"+961 4 523 435","contactType":"customer service","availableLanguage":["en","ar"]}],"address":{"@type":"PostalAddress","addressLocality":"Zouk Mosbeh","addressRegion":"Keserwan","addressCountry":"LB"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Bakhos%20Trading%20Zouk%20Mosbeh&query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"areaServed":{"@type":"Country","name":"Lebanon"},"currenciesAccepted":"USD","knowsAbout":["Industrial solvents","Thinners","Epoxy resin","Epoxy hardener","Bitumen waterproofing membranes","Paint raw materials","Paint and wall finishing"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","@id":"http://www.bakhostrading.net/#business","name":"Bakhos Trading","foundingDate":"1996","alternateName":"باخوس للتجارة","description":"Importer, blender and distributor of industrial solvents, thinners, epoxy, bitumen membranes and paint raw materials in Zouk Mosbeh, Lebanon.","url":"http://www.bakhostrading.net/","image":"http://www.bakhostrading.net/img/share.jpg","logo":"http://www.bakhostrading.net/favicon.svg","telephone":"+961 3 295 599","email":"info@bakhostrading.net","contactPoint":[{"@type":"ContactPoint","telephone":"+961 3 295 599","contactType":"sales","availableLanguage":["en","ar"]},{"@type":"ContactPoint","telephone":"+961 4 523 435","contactType":"customer service","availableLanguage":["en","ar"]}],"address":{"@type":"PostalAddress","addressLocality":"Zouk Mosbeh","addressRegion":"Keserwan","addressCountry":"LB"},"hasMap":"https://www.google.com/maps/search/?api=1&query=Bakhos%20Trading%20Zouk%20Mosbeh&query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak","openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"08:00","closes":"16:30"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"08:00","closes":"13:00"}],"areaServed":{"@type":"Country","name":"Lebanon"},"currenciesAccepted":"USD","knowsAbout":["Industrial solvents","Thinners","Epoxy resin","Epoxy hardener","Bitumen waterproofing membranes","Paint raw materials","Paint and wall finishing"]}</script>
 
 <meta name="description" content="Bakhos Trading, Zouk Mosbeh, Lebanon: industrial solvents, custom thinners, paints, epoxy resins and hardeners, bitumen membranes and paint raw materials, from 1-litre bottles to 20-tonne ISO tanks.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,6 +189,14 @@ html[lang="ar"] .ex-cta b { font-family: var(--arabic); text-transform: none; fo
 .ex-cta p { color: #c8ced4; }
 .ex-cta .btn { justify-self: start; margin-top: 6px; }
 @media (max-width: 900px) { .export { grid-template-columns: 1fr; } }
+.stats-band { background: var(--amber); color: var(--ink); }
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); }
+.stats div { padding: 22px 16px; display: grid; gap: 2px; border-inline-start: 1px solid rgba(18,20,23,.18); }
+.stats div:first-child { border-inline-start: 0; padding-inline-start: 0; }
+.stats b { font-family: var(--display); font-size: clamp(34px, 4.4vw, 52px); line-height: 1; font-weight: 800; direction: ltr; unicode-bidi: isolate; }
+html[dir="rtl"] .stats b { text-align: right; }
+.stats div > span { font-weight: 500; font-size: 15px; }
+@media (max-width: 760px) { .stats { grid-template-columns: repeat(2, 1fr); } .stats div:nth-child(3) { border-inline-start: 0; padding-inline-start: 0; } .stats div { padding: 16px 12px; } }
 /* converter */
 .convert { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 0; background: var(--ink); color: #fff; border-radius: 10px; overflow: hidden; }
 .convert .lab { padding: 22px; background: var(--amber); color: var(--ink); display: grid; align-content: center; gap: 2px; min-width: 190px; }
@@ -314,7 +322,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   <div class="wrap">
     <div class="grid">
       <div>
-        <div class="kicker" data-i="kicker">Zouk Mosbeh · Lebanon · Solvent importer &amp; blender</div>
+        <div class="kicker" data-i="kicker">Since 1996 · Zouk Mosbeh, Lebanon · Solvent importer &amp; blender</div>
         <h1 data-i="h1" data-html>Solvents, thinners, epoxy <em>&amp; paint raw materials</em></h1>
         <p class="lede" data-i="lede">We import industrial solvents from Turkey, the Gulf, Egypt, Europe, India, Korea and the USA, blend our own thinners, and deliver anywhere in Lebanon, from a 1-litre bottle to a 20-tonne ISO tank.</p>
         <div class="cta">
@@ -331,6 +339,15 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <div><span class="bar-v" style="width:62%"></span><span class="v">1,000 L</span><span class="l" data-i="s4">IBC tote</span></div>
       <div><span class="bar-v" style="width:100%"></span><span class="v">20 t</span><span class="l" data-i="s5">ISO tank</span></div>
     </div>
+  </div>
+</section>
+
+<section class="stats-band" aria-label="Key facts">
+  <div class="wrap stats">
+    <div><b>1996</b><span data-i="st1">Registered company</span></div>
+    <div><b><span id="yrs">30</span>+</b><span data-i="st2">Years in solvents</span></div>
+    <div><b>8</b><span data-i="st3">Sourcing countries</span></div>
+    <div><b>FCL</b><span data-i="st4">Export to Syria &amp; Africa</span></div>
   </div>
 </section>
 
@@ -567,7 +584,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     <svg viewBox="0 0 612 354" role="img" aria-label="Bakhos Trading"><use href="#logo"></use></svg>
     <a data-i="foot" href="https://www.google.com/maps/search/?api=1&amp;query=Bakhos%20Trading%20Zouk%20Mosbeh&amp;query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" style="color:inherit">Bakhos Trading · Zouk Mosbeh, Lebanon</a>
     <span dir="ltr">+961 3 295 599 · +961 4 523 435 · info@bakhostrading.net</span>
-    <span>© <span id="yr">2026</span></span>
+    <span><span data-i="est">Est. 1996</span> · © <span id="yr">2026</span></span>
   </div>
 </footer>
 
@@ -597,7 +614,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     nav_sup: "منتجاتنا",
     nav_grp: "المجموعة",
     nav_quote: "طلب عرض سعر",
-    kicker: "ذوق مصبح · لبنان · استيراد المذيبات وخلطها",
+    kicker: "منذ عام ١٩٩٦ · ذوق مصبح، لبنان · استيراد المذيبات وخلطها", st1: "شركة مسجّلة", st2: "عامًا في قطاع المذيبات", st3: "دول نستورد منها", st4: "تصدير إلى سوريا وأفريقيا",
     h1: "مذيبات، ثنر، إيبوكسي <em>ومواد خام للدهانات</em>",
     lede: "نستورد المذيبات الصناعية من تركيا والخليج ومصر وأوروبا والهند وكوريا والولايات المتحدة، وننتج خلطات الثنر الخاصة بنا، ونوصل إلى جميع المناطق اللبنانية، من عبوة لتر واحد إلى صهريج ISO بسعة ٢٠ طنًا.",
     cta_quote: "اطلب عرض سعر",
@@ -750,7 +767,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     f_del_v: "إلى جميع المناطق اللبنانية بشاحناتنا، والتصدير بحاويات كاملة.",
     f_pay: "الأسعار",
     f_pay_v: "بالدولار الأمريكي، حسب كل طلب",
-    foot: "باخوس للتجارة · ذوق مصبح، لبنان"
+    foot: "باخوس للتجارة · ذوق مصبح، لبنان", est: "تأسست عام ١٩٩٦"
   };
   var PACK_AR = { "Bulk": "سائب" };
   var lang = "en", EN = {};
@@ -868,6 +885,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     applyLang();
   });
   document.getElementById("yr").textContent = String(new Date().getFullYear());
+  document.getElementById("yrs").textContent = String(new Date().getFullYear() - 1996);
   applyLang();
 })();
 </script>
