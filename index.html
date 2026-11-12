@@ -68,6 +68,9 @@ html[lang="ar"] .hero-photo figcaption, html[lang="ar"] .shot figcaption { font-
 .split .side figcaption { position: absolute; inset-inline-start: 0; bottom: 0; padding: 30px 16px 12px; width: 100%; color: #fff; font: 500 14px var(--body); background: linear-gradient(transparent, rgba(0,0,0,.65)); }
 html[lang="ar"] .split .side figcaption { font-family: var(--arabic); }
 .split .cols { grid-template-columns: 1fr; gap: 14px; }
+.side-stack { display: grid; grid-template-rows: 1fr 1fr; gap: 14px; }
+.side-stack .side { min-height: 0; }
+@media (max-width: 900px) { .side-stack { grid-template-rows: none; grid-template-columns: 1fr 1fr; } .side-stack .side { aspect-ratio: 3 / 4; } }
 .split .col { padding: 20px 24px; }
 .split .thinners { grid-template-columns: repeat(2, 1fr); }
 @media (max-width: 900px) { .split { grid-template-columns: 1fr; } .split .side { min-height: 0; aspect-ratio: 4 / 3; } }
@@ -324,7 +327,6 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <h2 data-i="th_h">Our own thinners</h2>
       <p data-i="th_p">Blended in Zouk Mosbeh in controlled batches, in three grades so you pay for the finish you need. For a specific paint, spray gun or humid summer day, we adjust the blend to the job.</p>
     </div>
-    <div class="split"><figure class="side"><img src="img/pails-thinner.jpg" alt="Pails of thinner and solvent on a pallet" width="960" height="1280" loading="lazy" style="object-position:50% 45%"><figcaption data-i="cap_th">Packed and ready to go</figcaption></figure>
     <div class="thinners">
       <article><span class="grade" data-i="g_prem">Premium</span><span class="code">M1</span><span class="tier" aria-label="Quality 3 of 3"><i class="on"></i><i class="on"></i><i class="on"></i></span><p data-i="m1">Our highest-quality thinner, for 1-component (1K) paint application.</p></article>
       <article><span class="grade" data-i="g_high">High grade</span><span class="code">T1S</span><span class="tier" aria-label="Quality 2 of 3"><i class="on"></i><i class="on"></i><i></i></span><p data-i="t1s">One step below M1, for quality paint work at a lower price.</p></article>
@@ -332,7 +334,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <article><span class="grade" data-i="g_clean">Cleaning</span><span class="code" data-i="cl_code">Wash</span><p data-i="cl">Cleaning thinner for spray guns, tools and equipment.</p></article>
       <article><span class="grade" data-i="g_auto">Automotive</span><span class="code">2K</span><p data-i="k2">For two-component (2K) car paints, built for high-heat application.</p></article>
       <article class="custom"><span class="grade" data-i="g_cust">On request</span><span class="code" data-i="cu_code">Custom</span><p data-i="cu">Tell us the paint, the method and the conditions. We blend for drying speed, finish and climate.</p></article>
-    </div></div>
+    </div>
     <p class="note" data-i="th_note">Also available as a branded 1-litre retail range with bilingual safety labels.</p>
   </div>
 </section>
@@ -343,7 +345,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       <h2 data-i="ep_h">Epoxy &amp; waterproofing</h2>
       <p data-i="ep_p">Epoxy as a raw material for formulators, or as a finished system ready to apply. Plus bitumen membranes for roofs and foundations, from stock in Zouk Mosbeh.</p>
     </div>
-    <div class="split"><figure class="side"><img src="img/bitumen-site.jpg" alt="Foundation wall waterproofed with bitumen membrane on a building site" width="960" height="1280" loading="lazy" style="object-position:30% 72%"><figcaption data-i="cap_ep">Bitumen waterproofing on a foundation wall, with our delivery on site</figcaption></figure>
+    <div class="split"><div class="side-stack"><figure class="side"><img src="img/pails-thinner.jpg" alt="Pails of epoxy on a pallet, part of a full container shipped to Africa" width="960" height="1280" loading="lazy" style="object-position:50% 45%"><figcaption data-i="cap_th">Epoxy in pails, a full container shipped to Africa</figcaption></figure><figure class="side"><img src="img/bitumen-site.jpg" alt="Foundation wall waterproofed with bitumen membrane on a building site" width="960" height="1280" loading="lazy" style="object-position:30% 72%"><figcaption data-i="cap_ep">Bitumen waterproofing on a foundation wall, with our delivery on site</figcaption></figure></div>
     <div class="cols">
       <div class="col"><span class="sub" data-i="ep1_s">Raw material</span><h3 data-i="ep1_h">Epoxy resins &amp; hardeners</h3>
         <ul><li data-i="ep1_1">Epoxy resin</li><li data-i="ep1_2">Hardeners (curing agents)</li><li data-i="ep1_3">Solvents and thinners for epoxy systems</li><li data-i="ep1_4">For paint factories and formulators</li></ul></div>
@@ -499,7 +501,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     pw3_s: "عدّة", pw3_h: "عدّة التطبيق", pw3_1: "روليات وفراشي", pw3_2: "مالج وسكاكين معجونة", pw3_3: "شريط لاصق، ورق زجاج وإكسسوارات", pw3_4: "تنر تنظيف لمسدسات الرش",
     pw_note: "مش متأكد شو بيلزمك؟ ابعتلنا على الواتساب نوع الحيط والسطح والمساحة ومنحضّرلك اللايحة.",
     cap_hero: "ساحتنا بذوق مصبح", cap1: "كونتينر كامل جاهز للتصدير", cap2: "ميثيل أسيتات، براميل ٢٠٠ ليتر", cap3: "خزانات IBC بالمخزون", cap4: "توصيل حمولات كاملة",
-    cap_th: "معبّى وجاهز للتسليم", cap_ep: "عزل بيتومين على حيط أساسات، مع التوصيل عالورشة", cap_pw: "تنر وشريط لاصق ومواد تشطيب بمستودعنا",
+    cap_th: "إيبوكسي بالتنك، كونتينر كامل مشحون لأفريقيا", cap_ep: "عزل بيتومين على حيط أساسات، مع التوصيل عالورشة", cap_pw: "تنر وشريط لاصق ومواد تشطيب بمستودعنا",
     sup_h: "شو منأمّن", sup_p: "مورّد واحد للمذيب والمادة الأولية ومواد التشطيب.",
     c1_h: "المذيبات الصناعية", c1_1: "مذيبات عطرية وأليفاتية ومؤكسجة", c1_2: "خلطات مذيبات حسب الطلب", c1_3: "أي صنف منأمّنه عند الطلب", c1_4: "سائب أو معبّأ، مع التوصيل",
     c2_h: "مواد أولية للدهانات", c2_1: "ثاني أكسيد التيتانيوم", c2_2: "إضافات بودرة", c2_3: "مجففات على أساس الزركونيوم", c2_4: "لمصانع الدهان والإيبوكسي والبولي يوريثان",
