@@ -209,6 +209,43 @@ html[lang="ar"] .stats b[data-i] { font-family: var(--arabic); direction: rtl; f
 html[lang="ar"] .sol-statement h2 { text-transform: none; font-size: clamp(30px, 4vw, 44px); }
 .sol-statement p { font-size: 22px; line-height: 1.45; }
 @media (max-width: 760px) { .sol-statement { grid-template-columns: 1fr; gap: 10px; } }
+.hero-full { position: relative; padding: 0; min-height: min(78vh, 720px); display: flex; align-items: flex-end; background: var(--ink); }
+.hero-bg, .hero-bg img { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hero-bg img { object-fit: cover; object-position: 50% 45%; }
+.hero-full::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(18,20,23,.88) 0%, rgba(18,20,23,.62) 42%, rgba(18,20,23,.10) 75%), linear-gradient(0deg, rgba(18,20,23,.7) 0%, rgba(18,20,23,0) 45%); }
+html[dir="rtl"] .hero-full::after { background: linear-gradient(270deg, rgba(18,20,23,.88) 0%, rgba(18,20,23,.62) 42%, rgba(18,20,23,.10) 75%), linear-gradient(0deg, rgba(18,20,23,.7) 0%, rgba(18,20,23,0) 45%); }
+.hero-inner { position: relative; z-index: 1; padding-top: 120px; padding-bottom: 64px; }
+.hero-full h1 { font-size: clamp(48px, 8vw, 108px); margin: 14px 0 16px; text-transform: uppercase; max-width: 12ch; line-height: .95; }
+.hero-full .lede { font-size: 20px; color: #e3e6e9; max-width: 44ch; }
+.wa-btn { background: #25d366; color: #fff; border-color: #25d366; }
+.wa-btn:hover { background: #1ebe5b; border-color: #1ebe5b; }
+@media (max-width: 700px) {
+  .hero-full { min-height: 86vh; }
+  .hero-full::after { background: linear-gradient(0deg, rgba(18,20,23,.92) 0%, rgba(18,20,23,.55) 50%, rgba(18,20,23,.15) 100%); }
+  .hero-inner { padding-bottom: 40px; }
+  .hero-full .cta .btn { flex: 1 1 100%; justify-content: center; text-align: center; }
+}
+.fac { display: grid; grid-template-columns: 1.35fr 1fr; gap: 28px; align-items: stretch; }
+.fac figure { margin: 0; border-radius: 12px; overflow: hidden; background: #d5d9dd; }
+.fac img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.fac-main { min-height: 420px; }
+.fac-text { display: flex; flex-direction: column; gap: 14px; }
+.fac-text h2 { font-size: clamp(32px, 3.6vw, 48px); text-transform: uppercase; line-height: 1; }
+html[lang="ar"] .fac-text h2 { text-transform: none; }
+.fac-text p { font-size: 18px; color: var(--muted); }
+.fac-pair { display: grid; grid-template-columns: 1.4fr 1fr; gap: 12px; flex: 1; min-height: 200px; margin-top: 6px; }
+@media (max-width: 900px) { .fac { grid-template-columns: 1fr; } .fac-main { min-height: 0; aspect-ratio: 16 / 9; } .fac-pair { min-height: 180px; } }
+.how { background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 32px; display: grid; gap: 22px; }
+.how h2 { font-size: clamp(30px, 3.4vw, 44px); text-transform: uppercase; }
+html[lang="ar"] .how h2 { text-transform: none; }
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.steps li { display: flex; gap: 14px; align-items: flex-start; }
+.steps b { flex: none; width: 46px; height: 46px; border-radius: 50%; background: var(--amber); color: var(--ink); font-family: var(--display); font-size: 26px; font-weight: 800; display: grid; place-items: center; }
+.steps h3 { font-size: 22px; margin-bottom: 4px; }
+.steps p { color: var(--muted); }
+@media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
+.block { padding: 72px 0; }
+@media (max-width: 700px) { .block { padding: 52px 0; } }
 /* converter */
 .convert { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 0; background: var(--ink); color: #fff; border-radius: 10px; overflow: hidden; }
 .convert .lab { padding: 22px; background: var(--amber); color: var(--ink); display: grid; align-content: center; gap: 2px; min-width: 190px; }
@@ -330,25 +367,18 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
 </header>
 
 <main id="top">
-<section class="hero">
-  <div class="wrap">
-    <div class="grid">
-      <div>
-        <div class="kicker" data-i="kicker">Since 1996 · Zouk Mosbeh, Lebanon · Solvent importer &amp; blender</div>
-        <h1 data-i="h1" data-html>Solvents, thinners, epoxy <em>&amp; paint raw materials</em></h1>
-        <p class="lede" data-i="lede">We import industrial solvents from Turkey, the Gulf, Egypt, Europe, India, Korea and the USA, blend our own thinners, and deliver anywhere in Lebanon.</p>
-        <div class="cta">
-          <a class="btn primary" href="#quote" data-i="cta_quote">Request a price</a>
-          <a class="btn ghost wa-link" href="https://wa.me/9613295599" rel="noopener" data-i="cta_wa">WhatsApp +961 3 295 599</a>
-        </div>
-      </div>
-      <figure class="hero-photo"><img src="img/yard-truck.jpg" alt="Bakhos Trading yard in Zouk Mosbeh with IBC totes, a forklift and a truck" width="960" height="1280" fetchpriority="high"><figcaption data-i="cap_hero">Our yard in Zouk Mosbeh</figcaption></figure>
-    </div>
-    <div class="scale" aria-label="What we do">
-      <div><span class="bar-v"></span><span class="v" data-i="s1">Chemical solvent solutions</span><span class="l" data-i="s1l">Sourcing, blending and technical advice</span></div>
-      <div><span class="bar-v"></span><span class="v" data-i="s2">Wholesale</span><span class="l" data-i="s2l">Trade supply to factories, shops and distributors</span></div>
-      <div><span class="bar-v"></span><span class="v" data-i="s3">Custom blends</span><span class="l" data-i="s3l">Thinners made to your paint and climate</span></div>
-      <div><span class="bar-v"></span><span class="v" data-i="s4">Export</span><span class="l" data-i="s4l">Full containers to Syria and Africa</span></div>
+<section class="hero hero-full">
+  <picture class="hero-bg">
+    <source media="(max-width: 700px)" srcset="img/hero-yard-mobile.jpg">
+    <img src="img/hero-yard.jpg" alt="Bakhos Trading yard in Zouk Mosbeh with drums, IBC totes and a forklift" width="1280" height="660" fetchpriority="high">
+  </picture>
+  <div class="wrap hero-inner">
+    <div class="kicker" data-i="kicker">Since 1996 · Zouk Mosbeh, Lebanon</div>
+    <h1 data-i="h1" data-html>Solvents, thinners <em>&amp; epoxy</em></h1>
+    <p class="lede" data-i="lede">Imported, blended and delivered across Lebanon, and exported by the container.</p>
+    <div class="cta">
+      <a class="btn wa-btn wa-link" href="https://wa.me/9613295599" rel="noopener"><span data-i="cta_wa2">WhatsApp us</span></a>
+      <a class="btn ghost" href="tel:+9613295599"><span data-i="cta_call">Call +961 3 295 599</span></a>
     </div>
   </div>
 </section>
@@ -362,13 +392,18 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   </div>
 </section>
 
-<section class="block" id="yard" style="padding-bottom:0">
+<section class="block" id="facility">
   <div class="wrap">
-    <div class="strip">
-      <figure class="shot"><img src="img/container-drums.jpg" alt="Shipping container loaded with blue solvent drums for export" width="591" height="786" loading="lazy"><figcaption data-i="cap1">Full container load, ready for export</figcaption></figure>
-      <figure class="shot"><img src="img/methyl-acetate.jpg" alt="Labelled 200 litre drum of methyl acetate" width="720" height="1280" loading="lazy" style="object-position:50% 60%"><figcaption data-i="cap2">Methyl acetate, 200 L drums</figcaption></figure>
-      <figure class="shot"><img src="img/ibc-yard.jpg" alt="IBC totes stored in the yard" width="960" height="1280" loading="lazy" style="object-position:85% 60%"><figcaption data-i="cap3">IBC totes in stock</figcaption></figure>
-      <figure class="shot"><img src="img/forklift-loading.jpg" alt="Forklift loading IBC totes onto a truck at the Bakhos Trading yard" width="815" height="1205" loading="lazy" style="object-position:40% 60%"><figcaption data-i="cap4">Loading IBC totes for delivery</figcaption></figure>
+    <div class="fac">
+      <figure class="fac-main"><img src="img/premises.jpg" alt="Bakhos Trading premises in Zouk Mosbeh with drum and IBC stock" width="1600" height="750" loading="lazy"></figure>
+      <div class="fac-text">
+        <h2 data-i="fac_h">Our premises in Zouk Mosbeh</h2>
+        <p data-i="fac_p">Stock on hand, ready to load. Drums, pails and IBC totes in our own yard, so your order leaves the same day it is confirmed.</p>
+        <div class="fac-pair">
+          <figure><img src="img/stock.jpg" alt="Drums and IBC totes stacked in the yard" width="1280" height="490" loading="lazy"></figure>
+          <figure><img src="img/forklift-loading.jpg" alt="Forklift loading IBC totes onto a truck" width="815" height="1205" loading="lazy" style="object-position:40% 60%"></figure>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -520,6 +555,19 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   </div>
 </section>
 
+<section class="block" id="how">
+  <div class="wrap">
+    <div class="how">
+      <h2 data-i="how_h">How to order</h2>
+      <ol class="steps">
+        <li><b>1</b><div><h3 data-i="how1">Message us</h3><p data-i="how1p">WhatsApp or call with the product and the quantity you need.</p></div></li>
+        <li><b>2</b><div><h3 data-i="how2">Get today’s price</h3><p data-i="how2p">We reply the same day with the price and the delivery time.</p></div></li>
+        <li><b>3</b><div><h3 data-i="how3">Delivered</h3><p data-i="how3p">Delivered to you anywhere in Lebanon, or loaded for export.</p></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
 <section class="block" id="quote" style="padding-top:0">
   <div class="wrap">
     <div class="head">
@@ -589,9 +637,9 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     nav_sup: "منتجاتنا",
     nav_grp: "المجموعة",
     nav_quote: "طلب عرض سعر",
-    kicker: "منذ عام ١٩٩٦ · ذوق مصبح، لبنان · استيراد المذيبات وخلطها", st1b: "منذ ١٩٩٦", st1: "في خدمة القطاع الصناعي اللبناني", st2: "عامًا من الخبرة في القطاع", st3: "دول التوريد", st4: "تصدير بالحاويات إلى سوريا وأفريقيا",
-    h1: "مذيبات، ثنر، إيبوكسي <em>ومواد خام للدهانات</em>",
-    lede: "نستورد المذيبات الصناعية من تركيا والخليج ومصر وأوروبا والهند وكوريا والولايات المتحدة، وننتج خلطات الثنر الخاصة بنا، ونوصل إلى جميع المناطق اللبنانية.",
+    kicker: "منذ عام ١٩٩٦ · ذوق مصبح، لبنان", st1b: "منذ ١٩٩٦", st1: "في خدمة القطاع الصناعي اللبناني", st2: "عامًا من الخبرة في القطاع", st3: "دول التوريد", st4: "تصدير بالحاويات إلى سوريا وأفريقيا",
+    h1: "مذيبات، ثنر <em>وإيبوكسي</em>",
+    lede: "استيراد وخلط وتوصيل إلى جميع المناطق اللبنانية، وتصدير بالحاويات.",
     cta_quote: "اطلب عرض سعر",
     cta_wa: "واتساب ‎+961 3 295 599",
     s1: "حلول المذيبات الكيميائية", s1l: "توريد وخلط واستشارات فنية", s2: "البيع بالجملة", s2l: "توريد تجاري للمصانع والمحلات والموزعين", s3: "خلطات حسب الطلب", s3l: "ثنر مُعدّ حسب الدهان والمناخ", s4: "التصدير", s4l: "حاويات كاملة إلى سوريا وأفريقيا",
@@ -685,6 +733,9 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     ex2_h: "المستندات التي نوفرها", ex2_1: "شهادة المنشأ", ex2_2: "قائمة التعبئة", ex2_3: "صحائف بيانات السلامة (SDS)", ex2_4: "الفاتورة التجارية وجميع المستندات الأخرى المطلوبة للتخليص الجمركي",
     ex3_h: "تحتاج إلى حاوية؟", ex3_p: "أخبرنا بالمنتجات والكميات وميناء الوصول، وسنرد عليك بالسعر وموعد التحميل.", ex_btn: "اطلب عرض سعر للتصدير",
     fam1: "مذيبات عطرية", fam1p: "للدهانات الألكيدية والصناعية واللاكيه والثنر.", fam2: "إسترات وأسيتات", fam2p: "مذيبات سريعة ومتوسطة التبخر للاكيه والأحبار وأنظمة البولي يوريثان والنيترو.", fam3: "كحولات وإيثرات الجلايكول", fam3p: "لخلطات الثنر والأحبار والتنظيف، وللتحكم في الانسيابية والجفاف.", fam4: "مذيبات أليفاتية", fam4p: "وايت سبيريت لتخفيف الدهانات والتنظيف وإزالة الشحوم.", fam5: "ثنر الدهانات", fam5p: "M1 وT1S وT1 و2K وثنر التنظيف، نخلطها في ذوق مصبح.", fam6: "أي صنف آخر", fam6p: "نوفّره عند الطلب. أخبرنا بالمذيب والكمية المطلوبة.",
+    cta_wa2: "راسلنا عبر واتساب", cta_call: "اتصل ‎+961 3 295 599",
+    fac_h: "مقرّنا في ذوق مصبح", fac_p: "مخزون جاهز للتحميل. براميل وجالونات وحاويات IBC في ساحتنا، ليُشحن طلبك في يوم تأكيده.",
+    how_h: "طريقة الطلب", how1: "راسلنا", how1p: "عبر واتساب أو الهاتف، مع ذكر المنتج والكمية المطلوبة.", how2: "احصل على سعر اليوم", how2p: "نرد عليك في اليوم نفسه بالسعر وموعد التسليم.", how3: "التسليم", how3p: "نوصل إلى أي منطقة في لبنان، أو نحمّل للتصدير.",
     sup_h: "ما نوفّره",
     sup_p: "مورّد واحد للمذيب والمادة الخام ومواد التشطيب.",
     c1_h: "المذيبات الصناعية",
