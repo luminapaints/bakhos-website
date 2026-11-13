@@ -251,7 +251,7 @@ html[lang="ar"] .sec-h, html[lang="ar"] .contact h2 { text-transform: none; }
 .tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .tile { margin: 0; position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 3 / 4; background: #222; }
 .tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.tile figcaption { position: absolute; inset: auto 0 0 0; padding: 60px 18px 18px; background: linear-gradient(0deg, rgba(18,20,23,.9), rgba(18,20,23,0)); color: #fff; }
+.tile-cap { position: absolute; inset: auto 0 0 0; padding: 60px 18px 18px; background: linear-gradient(0deg, rgba(18,20,23,.9), rgba(18,20,23,0)); color: #fff; }
 .tile h3 { font-size: 22px; margin: 0 0 4px; color: #fff; }
 .tile p { margin: 0; color: #d6d9dc; font-size: 15px; }
 .also { margin-top: 18px; color: var(--muted); font-size: 17px; }
@@ -407,7 +407,7 @@ h1, h2, h3 { font-weight: 600; letter-spacing: -.01em; line-height: 1.1; text-tr
 .tile { aspect-ratio: auto; background: #fff; border: 1px solid var(--rule); display: flex; flex-direction: column; transition: border-color .15s, box-shadow .15s; }
 .tile:hover { border-color: #b9cdee; box-shadow: 0 12px 28px -18px rgba(10,91,211,.45); }
 .tile img { aspect-ratio: 4 / 3; height: auto; }
-.tile figcaption { position: static; background: none; color: var(--ink); padding: 16px 18px 20px; border-top: 3px solid var(--blue); }
+.tile-cap { position: static; background: none; color: var(--ink); padding: 16px 18px 20px; border-top: 3px solid var(--blue); }
 .tile h3 { color: var(--ink); font-size: 20px; }
 .tile p { color: var(--muted); }
 .tag { display: inline-block; font-family: var(--mono); font-size: 12px; color: var(--blue); letter-spacing: .08em; margin-bottom: 6px; }
@@ -457,6 +457,21 @@ footer svg { --shard: #5b9bf5; }
 .origins div { min-width: 0; }
 .origins b { overflow-wrap: anywhere; }
 @media (max-width: 360px) { .origins div { padding: 16px 10px 14px; } .origins b { font-size: 15px !important; } .stats div { min-width: 0; } .stats b { font-size: 22px !important; white-space: nowrap; } .stats { gap: 0; } }
+
+/* cursors & selection */
+body { cursor: default; }
+a, button, [role="button"], label, select, summary { cursor: pointer; }
+input, textarea { cursor: text; }
+.btn, .bar nav a, .lang, .wa-float, .tile, .stats, .segs, .tag, .origins, .kicker, .qa, .ct-facts dt { -webkit-user-select: none; user-select: none; }
+img { -webkit-user-drag: none; user-select: none; }
+a.tile { display: flex; flex-direction: column; color: inherit; text-decoration: none; }
+a.tile:hover .tile-go, a.tile:focus-visible .tile-go { opacity: 1; transform: none; }
+a.tile:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+.tile-cap { display: block; padding: 16px 18px 18px; border-top: 3px solid var(--blue); flex: 1; display: flex; flex-direction: column; }
+.tile-cap p { flex: 1; }
+.tile-cap .tag { align-self: flex-start; }
+.tile-go { align-self: flex-start; display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--blue); opacity: .0; transform: translateY(4px); transition: opacity .15s, transform .15s; }
+@media (hover: none) { .tile-go { opacity: 1; transform: none; } }
 </style>
 </head>
 <body>
@@ -527,10 +542,10 @@ footer svg { --shard: #5b9bf5; }
   <div class="wrap">
     <h2 class="sec-h" data-i="pr_h">What we sell</h2>
     <div class="tiles">
-      <figure class="tile"><img src="img/methyl-acetate.jpg" alt="" loading="lazy"><figcaption><span class="tag">01</span><h3 data-i="pr1">Chemical solvents</h3><p data-i="pr1p">For industrial and paint use</p></figcaption></figure>
-      <figure class="tile"><img src="img/thinner-777.jpg" alt="777 high gloss thinner tins" loading="lazy" style="object-position:50% 40%"><figcaption><span class="tag">02</span><h3 data-i="pr2">Paint thinners</h3><p data-i="pr2p">Blended in Lebanon, in several grades</p></figcaption></figure>
-      <figure class="tile"><img src="img/pails-thinner.jpg" alt="" loading="lazy"><figcaption><span class="tag">03</span><h3 data-i="pr3">Epoxy</h3><p data-i="pr3p">Raw material and ready to apply</p></figcaption></figure>
-      <figure class="tile"><img src="img/bitumen-site.jpg" alt="" loading="lazy"><figcaption><span class="tag">04</span><h3 data-i="pr4">Bitumen membranes</h3><p data-i="pr4p">In stock</p></figcaption></figure>
+      <a class="tile" data-prod="pr1" href="https://wa.me/9613295599" rel="noopener"><img src="img/methyl-acetate.jpg" alt="" loading="lazy"><span class="tile-cap"><span class="tag">01</span><h3 data-i="pr1">Chemical solvents</h3><p data-i="pr1p">For industrial and paint use</p><span class="tile-go" data-i="tile_go">Ask for a price →</span></span></a>
+      <a class="tile" data-prod="pr2" href="https://wa.me/9613295599" rel="noopener"><img src="img/thinner-777.jpg" alt="777 high gloss thinner tins" loading="lazy" style="object-position:50% 40%"><span class="tile-cap"><span class="tag">02</span><h3 data-i="pr2">Paint thinners</h3><p data-i="pr2p">Blended in Lebanon, in several grades</p><span class="tile-go" data-i="tile_go">Ask for a price →</span></span></a>
+      <a class="tile" data-prod="pr3" href="https://wa.me/9613295599" rel="noopener"><img src="img/pails-thinner.jpg" alt="" loading="lazy"><span class="tile-cap"><span class="tag">03</span><h3 data-i="pr3">Epoxy</h3><p data-i="pr3p">Raw material and ready to apply</p><span class="tile-go" data-i="tile_go">Ask for a price →</span></span></a>
+      <a class="tile" data-prod="pr4" href="https://wa.me/9613295599" rel="noopener"><img src="img/bitumen-site.jpg" alt="" loading="lazy"><span class="tile-cap"><span class="tag">04</span><h3 data-i="pr4">Bitumen membranes</h3><p data-i="pr4p">In stock</p><span class="tile-go" data-i="tile_go">Ask for a price →</span></span></a>
     </div>
     <p class="ask"><span data-i="ask1">Don’t see your product? We source on request.</span> <a class="wa-link" href="https://wa.me/9613295599" rel="noopener" data-i="ask2">Ask us on WhatsApp →</a></p>
   </div>
@@ -615,7 +630,7 @@ footer svg { --shard: #5b9bf5; }
   ];
   var AR = {
     qa1: "صحيفة بيانات السلامة (SDS) مع كل شحنة", qa2: "شهادة المنشأ وقائمة التعبئة", qa3: "مخزون متوفر في ذوق مصبح",
-    st5: "كجم من المذيبات سنويًا", cta_wa3: "واتساب", cta_mail: "راسلنا", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "اسألنا عبر واتساب ←",
+    st5: "كجم من المذيبات سنويًا", cta_wa3: "واتساب", cta_mail: "راسلنا", tile_go: "اطلب السعر ←", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "اسألنا عبر واتساب ←",
     seg_h: "نخدم", seg1: "مصانع الدهانات", seg2: "محلات دهان السيارات", seg3: "محلات بيع الدهانات", seg4: "الموزعين", seg5: "المقاولين", seg6: "التصدير",
     nav_prod: "منتجاتنا", nav_fac: "مقرّنا", nav_contact: "تواصل معنا",
     pr_h: "منتجاتنا", pr1: "مذيبات كيميائية", pr1p: "للاستخدامات الصناعية والدهانات", pr2: "ثنر الدهانات", pr2p: "يُخلط في لبنان وبعدة درجات", pr3: "الإيبوكسي", pr3p: "مادة خام ومنتج جاهز للتطبيق", pr4: "لفائف العزل البيتوميني", pr4p: "متوفرة في المستودع",
@@ -806,6 +821,7 @@ footer svg { --shard: #5b9bf5; }
     });
     document.getElementById("lang").textContent = lang === "ar" ? "English" : "عربي";
     var waMsg = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:"); document.querySelectorAll(".wa-link").forEach(function (a) { a.href = waMsg; });
+    document.querySelectorAll("a.tile").forEach(function (a) { var name = (lang === "ar" ? AR : EN)[a.dataset.prod] || a.querySelector("h3").textContent; a.href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent((lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الحصول على سعر: " : "Hello Bakhos Trading, I would like a price for: ") + name); });
     document.getElementById("wa-float").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:");
     document.title = lang === "ar" ? "باخوس للتجارة – مذيبات وثنر وإيبوكسي | ذوق مصبح، لبنان" : "Bakhos Trading – Solvents, Thinners, Epoxy & Paint Raw Materials | Zouk Mosbeh, Lebanon";
     fillSelects(); updateQuote();
