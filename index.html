@@ -445,11 +445,12 @@ footer svg { --shard: #5b9bf5; }
   .lab-hero .cta .btn { flex: 1 1 100%; justify-content: center; }
   .segs .wrap { gap: 10px; }
 }
-.bar-wa { padding: 8px 14px; font-size: 14px; }
+.bar-mail { white-space: nowrap; padding: 8px 14px; font-size: 14px; background: var(--blue); color: #fff; border-color: var(--blue); display: inline-flex; align-items: center; gap: 8px; }
+.bar-mail:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
 .ask { margin-top: 22px; padding: 16px 20px; background: var(--blue-tint); border: 1px solid #cddcf3; border-radius: 10px; font-size: 17px; font-weight: 500; }
 .ask a { color: var(--blue); font-weight: 600; text-decoration: none; white-space: nowrap; }
 .ask a:hover { text-decoration: underline; }
-@media (max-width: 700px) { .bar nav { display: none; } .bar-wa { margin-inline-start: auto; } }
+@media (max-width: 700px) { .bar nav { display: none; } .bar-mail { margin-inline-start: auto; } }
 .fac-pair { flex: none !important; height: 300px; min-height: 0 !important; }
 .fac-pair img { object-position: 50% 55% !important; }
 @media (max-width: 900px) { .fac-pair { height: 240px; } }
@@ -469,7 +470,7 @@ footer svg { --shard: #5b9bf5; }
       <a href="#facility" data-i="nav_fac">Our yard</a>
       <a href="#contact" data-i="nav_contact">Contact</a>
     </nav>
-    <a class="btn wa-btn wa-link bar-wa" href="https://wa.me/9613295599" rel="noopener"><span data-i="cta_wa3">WhatsApp</span></a>
+    <a class="btn bar-mail" href="mailto:info@bakhostrading.net"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-i="cta_mail">Email us</span></a>
     <button class="lang" id="lang" type="button" aria-label="Switch language">عربي</button>
   </div>
 </header>
@@ -614,7 +615,7 @@ footer svg { --shard: #5b9bf5; }
   ];
   var AR = {
     qa1: "صحيفة بيانات السلامة (SDS) مع كل شحنة", qa2: "شهادة المنشأ وقائمة التعبئة", qa3: "مخزون متوفر في ذوق مصبح",
-    st5: "كجم من المذيبات سنويًا", cta_wa3: "واتساب", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "اسألنا عبر واتساب ←",
+    st5: "كجم من المذيبات سنويًا", cta_wa3: "واتساب", cta_mail: "راسلنا", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "اسألنا عبر واتساب ←",
     seg_h: "نخدم", seg1: "مصانع الدهانات", seg2: "محلات دهان السيارات", seg3: "محلات بيع الدهانات", seg4: "الموزعين", seg5: "المقاولين", seg6: "التصدير",
     nav_prod: "منتجاتنا", nav_fac: "مقرّنا", nav_contact: "تواصل معنا",
     pr_h: "منتجاتنا", pr1: "مذيبات كيميائية", pr1p: "للاستخدامات الصناعية والدهانات", pr2: "ثنر الدهانات", pr2p: "يُخلط في لبنان وبعدة درجات", pr3: "الإيبوكسي", pr3p: "مادة خام ومنتج جاهز للتطبيق", pr4: "لفائف العزل البيتوميني", pr4p: "متوفرة في المستودع",
