@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bakhos Trading – Solvents, Thinners, Epoxy &amp; Paint Raw Materials | Zouk Mosbeh, Lebanon</title>
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-CQKFZL67J7"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-CQKFZL67J7');</script>
+
 <link rel="preload" as="image" href="img/hero-premises.webp" fetchpriority="high">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.bakhostrading.net/">
@@ -896,6 +900,18 @@ a.lang { text-decoration: none; display: inline-flex; align-items: center; }
     document.querySelectorAll("[data-em-href]").forEach(function (a) { a.href = links[a.getAttribute("data-em-href")]; });
     document.querySelectorAll("[data-em]").forEach(function (el) { el.textContent = EM; });
   })();
+
+  // analytics: count WhatsApp / call / email clicks (only when GA is loaded)
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("a, button"); if (!a || typeof gtag !== "function") return;
+    var h = a.getAttribute("href") || "", ev = null;
+    if (/wa\.me/.test(a.href || "")) ev = "click_whatsapp";
+    else if (/^tel:/.test(h)) ev = "click_call";
+    else if (a.id === "mail-btn" || a.hasAttribute("data-em-href") || a.id === "mail-copy") ev = "click_email";
+    else if (a.classList.contains("tile")) ev = "click_product";
+    else if (/google\.com\/maps/.test(a.href || "")) ev = "click_directions";
+    if (ev) gtag("event", ev, { link_text: (a.textContent || "").trim().slice(0, 60), page_lang: document.documentElement.lang });
+  }, true);
   // email menu
   (function () {
     var btn = document.getElementById("mail-btn"), menu = document.getElementById("mail-menu"), copy = document.getElementById("mail-copy");
