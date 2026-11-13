@@ -472,6 +472,23 @@ a.tile:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
 .tile-cap .tag { align-self: flex-start; }
 .tile-go { align-self: flex-start; display: inline-block; margin-top: 12px; font-size: 14px; font-weight: 600; color: var(--blue); opacity: .0; transform: translateY(4px); transition: opacity .15s, transform .15s; }
 @media (hover: none) { .tile-go { opacity: 1; transform: none; } }
+
+/* review fixes */
+.band .head { display: block; }
+.band .head h2 { margin-bottom: 8px; }
+.band .head p { margin: 0 0 28px; font-size: 17px; }
+.band { padding-bottom: 24px; }
+#contact { padding-top: 40px; }
+.origins b { overflow-wrap: normal !important; word-break: normal; hyphens: manual; }
+@media (max-width: 420px) { .origins b { font-size: 15px !important; } }
+@media (max-width: 600px) {
+  .tiles { grid-template-columns: 1fr; gap: 12px; }
+  a.tile { flex-direction: row; min-height: 128px; }
+  a.tile img { width: 42%; aspect-ratio: auto; height: auto; min-height: 100%; flex: none; }
+  .tile-cap { border-top: 0; border-inline-start: 3px solid var(--blue); padding: 14px 16px; justify-content: center; }
+  .tile-cap p { flex: none; }
+  .tile h3 { font-size: 19px; }
+}
 </style>
 </head>
 <body>
