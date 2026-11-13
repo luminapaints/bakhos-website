@@ -7,6 +7,9 @@
 <link rel="preload" as="image" href="img/hero-premises.webp" fetchpriority="high">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="canonical" href="https://www.bakhostrading.net/">
+<link rel="alternate" hreflang="en" href="https://www.bakhostrading.net/">
+<link rel="alternate" hreflang="ar" href="https://www.bakhostrading.net/ar/">
+<link rel="alternate" hreflang="x-default" href="https://www.bakhostrading.net/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Bakhos Trading">
 <meta property="og:title" content="Bakhos Trading – Solvents, Thinners &amp; Epoxy">
@@ -515,6 +518,7 @@ a.tile { overflow: hidden; }
 .mail-menu a, .mail-menu button { display: block; width: 100%; text-align: start; padding: 10px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; font: inherit; font-size: 15px; background: none; border: 0; cursor: pointer; }
 .mail-menu a:hover, .mail-menu button:hover, .mail-menu a:focus-visible, .mail-menu button:focus-visible { background: var(--blue-tint); color: var(--blue); outline: none; }
 @media (max-width: 700px) { .mail-wrap { margin-inline-start: auto; } .bar-mail { margin-inline-start: 0 !important; } }
+a.lang { text-decoration: none; display: inline-flex; align-items: center; }
 </style>
 </head>
 <body>
@@ -538,7 +542,7 @@ a.tile { overflow: hidden; }
         <button type="button" role="menuitem" id="mail-copy" data-i="mail_copy">Copy address</button>
       </div>
     </div>
-    <button class="lang" id="lang" type="button" aria-label="Switch language">عربي</button>
+    <a class="lang" id="lang" href="/ar/" hreflang="ar" lang="ar" aria-label="النسخة العربية">عربي</a>
   </div>
 </header>
 
@@ -566,7 +570,7 @@ a.tile { overflow: hidden; }
 <section class="stats-band" aria-label="Key facts">
   <div class="wrap stats">
     <div><b><span id="yrs">30</span>+</b><span data-i="st2">Years of experience</span></div>
-    <div><b>400,000+ kg</b><span data-i="st5">Solvents supplied every year</span></div>
+    <div><b data-i="st5b">400,000+ kg</b><span data-i="st5">Solvents supplied every year</span></div>
     <div><b>8</b><span data-i="st3">Countries of supply</span></div>
     <div><b data-i="st4b">Export</b><span data-i="st4">Full containers to Syria and Africa</span></div>
   </div>
@@ -682,7 +686,7 @@ a.tile { overflow: hidden; }
   ];
   var AR = {
     qa1: "صحيفة بيانات السلامة (SDS) مع كل شحنة", qa2: "شهادة المنشأ وقائمة التعبئة", qa3: "مخزون متوفر في ذوق مصبح",
-    st5: "كجم من المذيبات سنويًا", cta_wa3: "واتساب", cta_mail: "راسلنا", mail_gmail: "فتح في Gmail", mail_outlook: "فتح في Outlook", mail_app: "فتح تطبيق البريد", mail_copy: "نسخ العنوان", cta_prod: "تصفّح منتجاتنا", tile_go: "اطلب السعر ↓", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "تواصل معنا ↓",
+    st5: "كيلوغرام من المذيبات سنويًا", st5b: "400,000+", cta_wa3: "واتساب", cta_mail: "راسلنا", mail_gmail: "فتح في Gmail", mail_outlook: "فتح في Outlook", mail_app: "فتح تطبيق البريد", mail_copy: "نسخ العنوان", cta_prod: "تصفّح منتجاتنا", tile_go: "اطلب السعر ↓", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "تواصل معنا ↓",
     seg_h: "نخدم", seg1: "مصانع الدهانات", seg2: "محلات دهان السيارات", seg3: "محلات بيع الدهانات", seg4: "الموزعين", seg5: "المقاولين", seg6: "التصدير",
     eb1: "٠١ · المنتجات", eb2: "٠٢ · المنشأة", eb3: "٠٣ · المصادر", eb4: "٠٤ · التواصل",
     nav_prod: "منتجاتنا", nav_fac: "مقرّنا", nav_contact: "تواصل معنا",
@@ -853,8 +857,7 @@ a.tile { overflow: hidden; }
     foot: "باخوس للتجارة · ذوق مصبح، لبنان", est: "منذ عام ١٩٩٦"
   };
   var PACK_AR = { "Bulk": "سائب" };
-  var lang = "en", EN = {};
-  try { if (localStorage.getItem("bt-lang") === "ar") lang = "ar"; } catch (e) {}
+  var lang = document.documentElement.lang === "ar" ? "ar" : "en", EN = {};
 
   document.querySelectorAll("[data-i]").forEach(function (el) {
     EN[el.getAttribute("data-i")] = el.hasAttribute("data-html") ? el.innerHTML : el.textContent;
@@ -872,17 +875,12 @@ a.tile { overflow: hidden; }
       if (v === undefined) return;
       if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
     });
-    document.getElementById("lang").textContent = lang === "ar" ? "English" : "عربي";
     var waMsg = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:"); document.querySelectorAll(".wa-link").forEach(function (a) { a.href = waMsg; });
     document.getElementById("wa-float").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:");
     document.title = lang === "ar" ? "باخوس للتجارة – مذيبات وثنر وإيبوكسي | ذوق مصبح، لبنان" : "Bakhos Trading – Solvents, Thinners, Epoxy & Paint Raw Materials | Zouk Mosbeh, Lebanon";
     fillSelects(); updateQuote();
   }
-  document.getElementById("lang").addEventListener("click", function () {
-    lang = lang === "ar" ? "en" : "ar";
-    try { localStorage.setItem("bt-lang", lang); } catch (e) {}
-    applyLang();
-  });
+
   document.getElementById("yr").textContent = String(new Date().getFullYear());
   document.getElementById("yrs").textContent = String(new Date().getFullYear() - 1996);
 
