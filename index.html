@@ -246,6 +246,24 @@ html[lang="ar"] .how h2 { text-transform: none; }
 @media (max-width: 800px) { .steps { grid-template-columns: 1fr; } }
 .block { padding: 72px 0; }
 @media (max-width: 700px) { .block { padding: 52px 0; } }
+.sec-h { font-size: clamp(32px, 3.6vw, 48px); text-transform: uppercase; margin-bottom: 24px; }
+html[lang="ar"] .sec-h, html[lang="ar"] .contact h2 { text-transform: none; }
+.tiles { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.tile { margin: 0; position: relative; border-radius: 12px; overflow: hidden; aspect-ratio: 3 / 4; background: #222; }
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.tile figcaption { position: absolute; inset: auto 0 0 0; padding: 60px 18px 18px; background: linear-gradient(0deg, rgba(18,20,23,.9), rgba(18,20,23,0)); color: #fff; }
+.tile h3 { font-size: 22px; margin: 0 0 4px; color: #fff; }
+.tile p { margin: 0; color: #d6d9dc; font-size: 15px; }
+.also { margin-top: 18px; color: var(--muted); font-size: 17px; }
+.contact { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: center; background: var(--card); border: 1px solid var(--rule); border-radius: 14px; padding: 40px; }
+.contact h2 { font-size: clamp(32px, 3.6vw, 48px); text-transform: uppercase; margin-bottom: 10px; }
+.contact p { font-size: 18px; color: var(--muted); margin-bottom: 22px; }
+.ct-facts { margin: 0; display: grid; gap: 16px; }
+.ct-facts dt { font-size: 13px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+.ct-facts dd { margin: 2px 0 0; font-size: 17px; }
+.ct-facts a { color: inherit; }
+@media (max-width: 900px) { .tiles { grid-template-columns: repeat(2, 1fr); } .contact { grid-template-columns: 1fr; padding: 26px; } }
+@media (max-width: 700px) { .contact .cta .btn { flex: 1 1 100%; justify-content: center; } }
 /* converter */
 .convert { margin-top: 22px; display: grid; grid-template-columns: auto 1fr; gap: 0; background: var(--ink); color: #fff; border-radius: 10px; overflow: hidden; }
 .convert .lab { padding: 22px; background: var(--amber); color: var(--ink); display: grid; align-content: center; gap: 2px; min-width: 190px; }
@@ -354,13 +372,9 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   <div class="wrap">
     <a class="brand" href="#top" aria-label="Bakhos Trading"><svg viewBox="0 0 612 354" role="img" aria-label="Bakhos Trading"><use href="#logo"></use></svg></a>
     <nav aria-label="Sections">
-      <a href="#catalogue" data-i="nav_cat">Solvents</a>
-      <a href="#thinners" data-i="nav_thin">Thinners</a>
-      <a href="#epoxy" data-i="nav_epx">Epoxy</a>
-      <a href="#paint" data-i="nav_pnt">Paint</a>
-      <a href="#supply" data-i="nav_sup">What we supply</a>
-      <a href="#export" data-i="nav_exp">Export</a>
-      <a href="#quote" data-i="nav_quote">Get a quote</a>
+      <a href="#products" data-i="nav_prod">Products</a>
+      <a href="#facility" data-i="nav_fac">Our yard</a>
+      <a href="#contact" data-i="nav_contact">Contact</a>
     </nav>
     <button class="lang" id="lang" type="button" aria-label="Switch language">عربي</button>
   </div>
@@ -392,13 +406,26 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   </div>
 </section>
 
-<section class="block" id="facility">
+<section class="block" id="products">
+  <div class="wrap">
+    <h2 class="sec-h" data-i="pr_h">What we sell</h2>
+    <div class="tiles">
+      <figure class="tile"><img src="img/methyl-acetate.jpg" alt="" loading="lazy"><figcaption><h3 data-i="pr1">Chemical solvents</h3><p data-i="pr1p">For industrial and paint use</p></figcaption></figure>
+      <figure class="tile"><img src="img/paint-stock.jpg" alt="" loading="lazy"><figcaption><h3 data-i="pr2">Paint thinners</h3><p data-i="pr2p">Blended in Lebanon, in several grades</p></figcaption></figure>
+      <figure class="tile"><img src="img/pails-thinner.jpg" alt="" loading="lazy"><figcaption><h3 data-i="pr3">Epoxy</h3><p data-i="pr3p">Raw material and ready to apply</p></figcaption></figure>
+      <figure class="tile"><img src="img/bitumen-site.jpg" alt="" loading="lazy"><figcaption><h3 data-i="pr4">Bitumen membranes</h3><p data-i="pr4p">In stock</p></figcaption></figure>
+    </div>
+    <p class="also" data-i="pr_also">Also: paint, plaster, putty and application tools, and raw materials for paint manufacturing.</p>
+  </div>
+</section>
+
+<section class="block" id="facility" style="padding-top:0">
   <div class="wrap">
     <div class="fac">
       <figure class="fac-main"><img src="img/premises.jpg" alt="Bakhos Trading premises in Zouk Mosbeh with drum and IBC stock" width="1600" height="750" loading="lazy"></figure>
       <div class="fac-text">
         <h2 data-i="fac_h">Our premises in Zouk Mosbeh</h2>
-        <p data-i="fac_p">Stock on hand, ready to load. Drums, pails and IBC totes in our own yard, so your order leaves the same day it is confirmed.</p>
+        <p data-i="fac_p">Stock on hand, ready to load the same day.</p>
         <div class="fac-pair">
           <figure><img src="img/stock.jpg" alt="Drums and IBC totes stacked in the yard" width="1280" height="490" loading="lazy"></figure>
           <figure><img src="img/forklift-loading.jpg" alt="Forklift loading IBC totes onto a truck" width="815" height="1205" loading="lazy" style="object-position:40% 60%"></figure>
@@ -408,104 +435,11 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   </div>
 </section>
 
-<section class="block" id="who" style="padding-bottom:0">
-  <div class="wrap">
-    <div class="who">
-      <h2 class="who-h" data-i="who_h">Who we supply</h2>
-      <ul class="who-list">
-        <li><b data-i="w1">Paint manufacturers</b><span data-i="w1s">Solvents and raw materials in bulk</span></li>
-        <li><b data-i="w2">Car paint &amp; body shops</b><span data-i="w2s">2K and high-gloss thinners</span></li>
-        <li><b data-i="w3">Paint shops</b><span data-i="w3s">Thinners, paints and finishing products</span></li>
-        <li><b data-i="w4">Local distributors</b><span data-i="w4s">Trade prices on regular volumes</span></li>
-        <li><b data-i="w5">Retail customers</b><span data-i="w5s">From a carton of 20 × 1 L</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="catalogue">
-  <div class="wrap">
-    <div class="sol-statement">
-      <h2 data-i="cat_h">Chemical solvents for industrial and paint use</h2>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="thinners" style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i="th_h">Our own thinners</h2>
-      <p data-i="th_p">Blended in Zouk Mosbeh in controlled batches, in three grades so you pay for the finish you need. For a specific paint, spray gun or humid summer day, we adjust the blend to the job.</p>
-    </div>
-    <div class="split"><figure class="side"><img src="img/paint-stock.jpg" alt="Stacks of 777 High Gloss Thinner tins in the warehouse" width="960" height="1280" loading="lazy" style="object-position:45% 30%"><figcaption data-i="cap_pw">777 High Gloss Thinner, in stock</figcaption></figure>
-    <div class="thinners">
-      <article><span class="grade" data-i="g_prem">Premium</span><span class="code">M1</span><span class="tier" aria-label="Quality 3 of 3"><i class="on"></i><i class="on"></i><i class="on"></i></span><p data-i="m1">Our highest-quality thinner, for 1-component (1K) paint application.</p></article>
-      <article><span class="grade" data-i="g_high">High grade</span><span class="code">T1S</span><span class="tier" aria-label="Quality 2 of 3"><i class="on"></i><i class="on"></i><i></i></span><p data-i="t1s">One step below M1, for quality paint work at a lower price.</p></article>
-      <article><span class="grade" data-i="g_std">Standard</span><span class="code">T1</span><span class="tier" aria-label="Quality 1 of 3"><i class="on"></i><i></i><i></i></span><p data-i="t1">The economical grade for everyday paint work.</p></article>
-      <article><span class="grade" data-i="g_clean">Cleaning</span><span class="code" data-i="cl_code">Wash</span><p data-i="cl">Cleaning thinner for spray guns, tools and equipment.</p></article>
-      <article><span class="grade" data-i="g_auto">Automotive</span><span class="code">2K</span><p data-i="k2">For two-component (2K) car paints, built for high-heat application.</p></article>
-      <article class="custom"><span class="grade" data-i="g_cust">On request</span><span class="code" data-i="cu_code">Custom</span><p data-i="cu">Tell us the paint, the method and the conditions. We blend for drying speed, finish and climate.</p></article>
-    </div></div>
-    <p class="note" data-i="th_note">Also available as a branded 1-litre range, sold in cartons of 20, with bilingual safety labels.</p>
-  </div>
-</section>
-
-<section class="block" id="epoxy" style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i="ep_h">Epoxy &amp; waterproofing</h2>
-      <p data-i="ep_p">Epoxy as a raw material for formulators, or as a finished system ready to apply. Plus bitumen membranes for roofs and foundations, from stock in Zouk Mosbeh.</p>
-    </div>
-    <div class="split"><div class="side-stack"><figure class="side"><img src="img/pails-thinner.jpg" alt="Pails of epoxy on a pallet, part of a full container shipped to Africa" width="960" height="1280" loading="lazy" style="object-position:50% 45%"><figcaption data-i="cap_th">Epoxy in pails, a full container shipped to Africa</figcaption></figure><figure class="side"><img src="img/bitumen-site.jpg" alt="Foundation wall waterproofed with bitumen membrane on a building site" width="960" height="1280" loading="lazy" style="object-position:30% 72%"><figcaption data-i="cap_ep">Bitumen waterproofing on a foundation wall, with our delivery on site</figcaption></figure></div>
-    <div class="cols">
-      <div class="col"><span class="sub" data-i="ep1_s">Raw material</span><h3 data-i="ep1_h">Epoxy resins &amp; hardeners</h3>
-        <ul><li data-i="ep1_1">Epoxy resin</li><li data-i="ep1_2">Hardeners (curing agents)</li><li data-i="ep1_3">Solvents and thinners for epoxy systems</li><li data-i="ep1_4">For paint factories and formulators</li></ul></div>
-      <div class="col dark"><span class="sub" data-i="ep2_s">Finished product</span><h3 data-i="ep2_h">Ready-to-apply epoxy</h3>
-        <ul><li data-i="ep2_1">Resin + hardener kits, matched</li><li data-i="ep2_2">For floors, coatings and protection</li><li data-i="ep2_3">For contractors and end users</li><li data-i="ep2_4">Advice on mixing and application</li></ul></div>
-      <div class="col"><span class="stock" data-i="stock">In stock</span><h3 data-i="ep3_h">Bitumen membranes</h3>
-        <ul><li data-i="ep3_1">Bituminous waterproofing rolls</li><li data-i="ep3_2">For roofs, terraces and foundations</li><li data-i="ep3_3">Ready for pickup or delivery</li><li data-i="ep3_4">For contractors and builders</li></ul></div>
-    </div></div>
-  </div>
-</section>
-
-<section class="block" id="paint" style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i="pw_h">Paint &amp; wall finishing</h2>
-      <p data-i="pw_p">Everything to take a wall from bare block to final coat, in one place. For contractors, painters and home owners, by the piece or by the pallet.</p>
-    </div>
-    <div class="cols">
-      <div class="col dark"><span class="sub" data-i="pw1_s">Paints</span><h3 data-i="pw1_h">Interior &amp; exterior</h3>
-        <ul><li data-i="pw1_1">Interior wall paints</li><li data-i="pw1_2">Exterior and weather-resistant paints</li><li data-i="pw1_3">Primers and sealers</li><li data-i="pw1_4">Thinners matched to every paint</li></ul></div>
-      <div class="col"><span class="sub" data-i="pw2_s">Preparation</span><h3 data-i="pw2_h">Plaster, putty &amp; render</h3>
-        <ul><li data-i="pw2_1">Wall putty</li><li data-i="pw2_2">Monocouche render</li><li data-i="pw2_3">Surface preparation products</li><li data-i="pw2_4">Waterproofing for walls and roofs</li></ul></div>
-      <div class="col"><span class="sub" data-i="pw3_s">Tools</span><h3 data-i="pw3_h">Application tools</h3>
-        <ul><li data-i="pw3_1">Rollers and brushes</li><li data-i="pw3_2">Trowels and spatulas</li><li data-i="pw3_3">Tapes, sandpaper and accessories</li><li data-i="pw3_4">Spray-gun cleaning thinner</li></ul></div>
-    </div>
-    <p class="note" data-i="pw_note">Not sure what a job needs? Send us the wall, the surface and the size on WhatsApp and we'll put the list together.</p>
-  </div>
-</section>
-
-<section class="block" id="supply" style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i="sup_h">What we supply</h2>
-      <p data-i="sup_p">One supplier for the solvent, the raw material and the finishing product.</p>
-    </div>
-    <div class="cols two-up">
-      <div class="col"><h3 data-i="c1_h">Industrial solvents</h3>
-        <ul><li data-i="c1_1">Aromatic, aliphatic and oxygenated solvents</li><li data-i="c1_2">Custom solvent blends</li><li data-i="c1_3">Any grade sourced on request</li><li data-i="c1_4">Bulk and packed, delivered</li></ul></div>
-      <div class="col"><h3 data-i="c2_h">Paint &amp; coating raw materials</h3>
-        <ul><li data-i="c2_1">Titanium dioxide</li><li data-i="c2_2">Powder additives</li><li data-i="c2_3">Zirconium-based driers</li><li data-i="c2_4">For paint, epoxy and PU manufacturers</li></ul></div>
-    </div>
-  </div>
-</section>
-
 <section class="block band">
   <div class="wrap">
     <div class="head">
       <h2 data-i="src_h">Sourced worldwide</h2>
-      <p data-i="src_p">We buy direct from producers and keep stock in Lebanon, so your production doesn't stop when a ship is late.</p>
+      <p data-i="src_p">Bought direct from producers, stocked in Lebanon.</p>
     </div>
     <div class="origins">
       <div><img class="flag" src="img/flags/tr.svg" alt="" width="48" height="36"><b data-i="o_tr">Turkey</b></div>
@@ -521,87 +455,21 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
   </div>
 </section>
 
-<section class="block" id="export">
+<section class="block" id="contact">
   <div class="wrap">
-    <div class="head">
-      <h2 data-i="ex_h">Export</h2>
-      <p data-i="ex_p">We ship full containers of solvents, thinners and epoxy from Lebanon to Syria and to Africa, with every document your customs and your customers need.</p>
-    </div>
-    <div class="export">
-      <div class="ex-col">
-        <h3 data-i="ex1_h">How we ship</h3>
-        <ul>
-          <li data-i="ex1_1">Full container loads (FCL)</li>
-          <li data-i="ex1_2">Drums, pails, IBC totes or mixed loads</li>
-          <li data-i="ex1_3">Loaded and sealed at our yard in Zouk Mosbeh</li>
-          <li data-i="ex1_4">Destinations: Syria and Africa, other markets on request</li>
-        </ul>
-      </div>
-      <div class="ex-col">
-        <h3 data-i="ex2_h">Documents we provide</h3>
-        <ul>
-          <li data-i="ex2_1">Certificate of origin</li>
-          <li data-i="ex2_2">Packing list</li>
-          <li data-i="ex2_3">Safety data sheets (SDS)</li>
-          <li data-i="ex2_4">Commercial invoice and all other documents required for customs</li>
-        </ul>
-      </div>
-      <div class="ex-cta">
-        <b data-i="ex3_h">Need a container?</b>
-        <p data-i="ex3_p">Tell us the products, quantities and destination port. We reply with a price and loading date.</p>
-        <a class="btn primary" id="ex-wa" href="https://wa.me/9613295599" rel="noopener" data-i="ex_btn">Request an export quote</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="how">
-  <div class="wrap">
-    <div class="how">
-      <h2 data-i="how_h">How to order</h2>
-      <ol class="steps">
-        <li><b>1</b><div><h3 data-i="how1">Message us</h3><p data-i="how1p">WhatsApp or call with the product and the quantity you need.</p></div></li>
-        <li><b>2</b><div><h3 data-i="how2">Get today’s price</h3><p data-i="how2p">We reply the same day with the price and the delivery time.</p></div></li>
-        <li><b>3</b><div><h3 data-i="how3">Delivered</h3><p data-i="how3p">Delivered to you anywhere in Lebanon, or loaded for export.</p></div></li>
-      </ol>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="quote" style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <h2 data-i="q_h">Get a price</h2>
-      <p data-i="q_p">Fill this in and send it on WhatsApp or by email. We reply with today's price and delivery time.</p>
-    </div>
-    <div class="quote">
-      <form class="qform" id="qform" novalidate>
-        <div class="field"><label for="q-name" data-i="q_name">Your name</label><input id="q-name" autocomplete="name" required></div>
-        <div class="field"><label for="q-co" data-i="q_co">Company (optional)</label><input id="q-co" autocomplete="organization"></div>
-        <div class="field"><label for="q-prod" data-i="q_prod">Product</label><select id="q-prod"></select></div>
-        <div class="field"><label for="q-qty" data-i="q_qty">Quantity</label>
-          <div class="two"><input id="q-qty" type="number" min="0" step="any" inputmode="decimal" placeholder="200">
-            <select id="q-unit" aria-label="Unit"><option value="L">L</option><option value="kg">kg</option><option value="drums">drums</option><option value="t">t</option></select></div></div>
-        <div class="field full"><label for="q-pack" data-i="q_pack">Packing</label>
-          <select id="q-pack"><option data-i="p0" value="Any">Any / you advise</option><option value="1 L bottles, cartons of 20" data-i="p1">1 L bottles (cartons of 20)</option><option value="Cans 16–20 L" data-i="p2">Cans 16–20 L</option><option value="200 L drums" data-i="p3">200 L drums</option><option value="IBC 1,000 L" data-i="p4">IBC 1,000 L</option><option value="Bulk / full container" data-i="p5">Bulk / full container</option></select></div>
-        <div class="field full"><label for="q-note" data-i="q_note">Anything else (use, delivery place, date)</label><textarea id="q-note"></textarea></div>
-        <div class="full" style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
-          <a class="btn dark" id="q-send" href="https://wa.me/9613295599" rel="noopener" data-i="q_send">Send on WhatsApp</a>
-          <a class="btn" id="q-mail" href="mailto:info@bakhostrading.net" style="border-color:var(--rule);background:#fff" data-i="q_mail">Send by email</a>
-          <button class="btn" type="button" id="q-copy" style="border-color:var(--rule);background:#fff" data-i="q_copy">Copy message</button>
-          <span id="q-status" class="note" role="status" style="margin:0"></span>
+    <div class="contact">
+      <div>
+        <h2 data-i="ct_h">Tell us what you need</h2>
+        <p data-i="ct_p">Send the product and quantity. We reply the same day with today’s price and delivery time.</p>
+        <div class="cta">
+          <a class="btn wa-btn wa-link" id="ct-wa" href="https://wa.me/9613295599" rel="noopener"><span data-i="cta_wa2">WhatsApp us</span></a>
+          <a class="btn dark" href="tel:+9613295599"><span data-i="cta_call">Call +961 3 295 599</span></a>
         </div>
-        <div class="preview" id="q-preview" aria-live="polite"></div>
-      </form>
-      <dl class="facts">
-        <div class="fact"><dt data-i="f_mob">Mobile &amp; WhatsApp</dt><dd><a class="wa-link" href="https://wa.me/9613295599" rel="noopener" dir="ltr">+961 3 295 599</a></dd></div>
-        <div class="fact"><dt data-i="f_call">Office</dt><dd><a href="tel:+9614523435" dir="ltr">+961 4 523 435</a></dd></div>
-        <div class="fact"><dt data-i="f_mail">Email</dt><dd><a href="mailto:info@bakhostrading.net">info@bakhostrading.net</a></dd></div>
-        <div class="fact"><dt data-i="f_where">Location</dt><dd><a href="https://www.google.com/maps/search/?api=1&amp;query=Bakhos%20Trading%20Zouk%20Mosbeh&amp;query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" data-i="f_where_v">Bakhos Trading, Zouk Mosbeh, Lebanon</a>
-          <div class="maplinks"><a class="btn dark small-btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Bakhos%20Trading&amp;destination_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" data-i="f_dir">Directions</a><a class="btn small-btn ghost-dark" href="https://www.google.com/maps/search/?api=1&amp;query=Bakhos%20Trading%20Zouk%20Mosbeh&amp;query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" data-i="f_map">Open in Google Maps</a></div></dd></div>
-        <div class="fact"><dt data-i="f_hours">Hours</dt><dd><span data-i="f_hours_v1">Mon–Fri 8:00–16:30</span><br><span data-i="f_hours_v2">Sat 8:00–13:00 · Sun closed</span></dd></div>
-        <div class="fact"><dt data-i="f_del">Delivery</dt><dd data-i="f_del_v">All of Lebanon, with our own trucks. Export by full container.</dd></div>
-        <div class="fact"><dt data-i="f_pay">Pricing</dt><dd data-i="f_pay_v">In US dollars, quoted per order</dd></div>
+      </div>
+      <dl class="ct-facts">
+        <div><dt data-i="f_where">Location</dt><dd><a href="https://www.google.com/maps/dir/?api=1&amp;destination=Bakhos%20Trading&amp;destination_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" data-i="f_where_v2">Zouk Mosbeh, Lebanon · Directions</a></dd></div>
+        <div><dt data-i="f_hours">Hours</dt><dd><span data-i="f_hours_v1">Mon–Fri 8:00–16:30</span><br><span data-i="f_hours_v2">Sat 8:00–13:00 · Sun closed</span></dd></div>
+        <div><dt data-i="f_del2">Delivery</dt><dd data-i="f_del_v2">All of Lebanon · Export by container</dd></div>
       </dl>
     </div>
   </div>
@@ -630,6 +498,11 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     ["Chemical solvents", "مذيبات كيميائية"]
   ];
   var AR = {
+    nav_prod: "منتجاتنا", nav_fac: "مقرّنا", nav_contact: "تواصل معنا",
+    pr_h: "منتجاتنا", pr1: "مذيبات كيميائية", pr1p: "للاستخدامات الصناعية والدهانات", pr2: "ثنر الدهانات", pr2p: "يُخلط في لبنان وبعدة درجات", pr3: "الإيبوكسي", pr3p: "مادة خام ومنتج جاهز للتطبيق", pr4: "لفائف العزل البيتوميني", pr4p: "متوفرة في المستودع",
+    pr_also: "إضافةً إلى الدهانات والجبس والمعجون وأدوات التطبيق، والمواد الخام لصناعة الدهانات.",
+    ct_h: "أخبرنا بما تحتاجه", ct_p: "أرسل المنتج والكمية، ونرد عليك في اليوم نفسه بسعر اليوم وموعد التسليم.",
+    f_where_v2: "ذوق مصبح، لبنان · الاتجاهات", f_del2: "التوصيل", f_del_v2: "جميع المناطق اللبنانية · تصدير بالحاويات",
     nav_cat: "المذيبات",
     nav_thin: "الثنر",
     nav_epx: "الإيبوكسي",
@@ -734,7 +607,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     ex3_h: "تحتاج إلى حاوية؟", ex3_p: "أخبرنا بالمنتجات والكميات وميناء الوصول، وسنرد عليك بالسعر وموعد التحميل.", ex_btn: "اطلب عرض سعر للتصدير",
     fam1: "مذيبات عطرية", fam1p: "للدهانات الألكيدية والصناعية واللاكيه والثنر.", fam2: "إسترات وأسيتات", fam2p: "مذيبات سريعة ومتوسطة التبخر للاكيه والأحبار وأنظمة البولي يوريثان والنيترو.", fam3: "كحولات وإيثرات الجلايكول", fam3p: "لخلطات الثنر والأحبار والتنظيف، وللتحكم في الانسيابية والجفاف.", fam4: "مذيبات أليفاتية", fam4p: "وايت سبيريت لتخفيف الدهانات والتنظيف وإزالة الشحوم.", fam5: "ثنر الدهانات", fam5p: "M1 وT1S وT1 و2K وثنر التنظيف، نخلطها في ذوق مصبح.", fam6: "أي صنف آخر", fam6p: "نوفّره عند الطلب. أخبرنا بالمذيب والكمية المطلوبة.",
     cta_wa2: "راسلنا عبر واتساب", cta_call: "اتصل ‎+961 3 295 599",
-    fac_h: "مقرّنا في ذوق مصبح", fac_p: "مخزون جاهز للتحميل. براميل وجالونات وحاويات IBC في ساحتنا، ليُشحن طلبك في يوم تأكيده.",
+    fac_h: "مقرّنا في ذوق مصبح", fac_p: "مخزون جاهز للتحميل في اليوم نفسه.",
     how_h: "طريقة الطلب", how1: "راسلنا", how1p: "عبر واتساب أو الهاتف، مع ذكر المنتج والكمية المطلوبة.", how2: "احصل على سعر اليوم", how2p: "نرد عليك في اليوم نفسه بالسعر وموعد التسليم.", how3: "التسليم", how3p: "نوصل إلى أي منطقة في لبنان، أو نحمّل للتصدير.",
     sup_h: "ما نوفّره",
     sup_p: "مورّد واحد للمذيب والمادة الخام ومواد التشطيب.",
@@ -750,7 +623,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     c2_4: "لمصانع الدهانات والإيبوكسي والبولي يوريثان",
     o_tr: "تركيا", o_sa: "السعودية", o_ae: "الإمارات", o_eg: "مصر", o_nl: "هولندا", o_in: "الهند", o_kr: "كوريا الجنوبية", o_us: "الولايات المتحدة", o_lb: "لبنان", o6s: "مخزون وخلط",
     src_h: "مصادر من حول العالم",
-    src_p: "نشتري مباشرة من المنتجين ونحتفظ بمخزون في لبنان، حتى لا يتوقف إنتاجك إذا تأخرت شحنة.",
+    src_p: "نشتري مباشرةً من المنتجين، والمخزون في لبنان.",
     grp_h: "مجموعة واحدة، سلسلة توريد واحدة",
     grp_p: "باخوس للتجارة هي نقطة البداية، وموادها الخام تغذّي علامة الدهانات وفرق المقاولات لدينا.",
     g1r: "استيراد · خلط · توزيع",
@@ -800,43 +673,8 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
     EN[el.getAttribute("data-i")] = el.hasAttribute("data-html") ? el.innerHTML : el.textContent;
   });
 
-  // quote product list
-  function fillSelects() {
-    var sel = document.getElementById("q-prod");
-    var keep = sel.value; sel.textContent = "";
-    SOLVENTS.forEach(function (s, k) { var o = document.createElement("option"); o.value = "fam" + k; o.textContent = lang === "ar" ? s[1] : s[0]; sel.appendChild(o); });
-    [["M1", lang === "ar" ? "ثنر M1 (ممتاز)" : "Thinner M1 (premium)"], ["T1S", lang === "ar" ? "ثنر T1S (جودة عالية)" : "Thinner T1S (high grade)"], ["T1", lang === "ar" ? "ثنر T1 (قياسي)" : "Thinner T1 (standard)"], ["wash", lang === "ar" ? "ثنر تنظيف" : "Cleaning thinner"], ["2K", lang === "ar" ? "ثنر 2K للسيارات" : "2K car thinner"], ["epoxy-resin", lang === "ar" ? "راتنج إيبوكسي (مادة أولية)" : "Epoxy resin (raw)"], ["epoxy-hardener", lang === "ar" ? "مصلّب إيبوكسي" : "Epoxy hardener (raw)"], ["epoxy-system", lang === "ar" ? "إيبوكسي جاهز للتطبيق" : "Ready-to-apply epoxy"], ["bitumen", lang === "ar" ? "لفائف عزل بيتومينية" : "Bitumen membrane rolls"], ["paint", lang === "ar" ? "دهانات ومواد تشطيب" : "Paint & wall finishing"], ["custom", lang === "ar" ? "ثنر خاص" : "Custom thinner"], ["other", lang === "ar" ? "منتج آخر (اذكره في الملاحظات)" : "Other (write it below)"]]
-          .forEach(function (p) { var o = document.createElement("option"); o.value = p[0]; o.textContent = p[1]; sel.appendChild(o); });
-    if (keep) sel.value = keep;
-  }
-
-  // quote → WhatsApp
-  var qIds = ["q-name", "q-co", "q-prod", "q-qty", "q-unit", "q-pack", "q-note"];
-  function quoteText() {
-    var g = function (id) { return document.getElementById(id); };
-    var prodSel = g("q-prod"); var prod = prodSel.options[prodSel.selectedIndex] ? prodSel.options[prodSel.selectedIndex].textContent : "";
-    var lines = [lang === "ar" ? "طلب سعر - باخوس للتجارة" : "Price request - Bakhos Trading"];
-    if (g("q-name").value.trim()) lines.push((lang === "ar" ? "الاسم: " : "Name: ") + g("q-name").value.trim());
-    if (g("q-co").value.trim()) lines.push((lang === "ar" ? "الشركة: " : "Company: ") + g("q-co").value.trim());
-    lines.push((lang === "ar" ? "المنتج: " : "Product: ") + prod);
-    if (g("q-qty").value) lines.push((lang === "ar" ? "الكمية: " : "Quantity: ") + g("q-qty").value + " " + g("q-unit").value);
-    var pk = g("q-pack"); lines.push((lang === "ar" ? "التعبئة: " : "Packing: ") + pk.options[pk.selectedIndex].textContent);
-    if (g("q-note").value.trim()) lines.push((lang === "ar" ? "ملاحظات: " : "Notes: ") + g("q-note").value.trim());
-    return lines.join("\n");
-  }
-  function updateQuote() {
-    var t = quoteText();
-    document.getElementById("q-send").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(t);
-    document.getElementById("q-mail").href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent(t.split("\n")[0]) + "&body=" + encodeURIComponent(t);
-    var pv = document.getElementById("q-preview"); pv.textContent = t; pv.classList.toggle("show", !!document.getElementById("q-name").value.trim());
-  }
-  qIds.forEach(function (id) { var el = document.getElementById(id); el.addEventListener("input", updateQuote); el.addEventListener("change", updateQuote); });
-  document.getElementById("qform").addEventListener("submit", function (e) { e.preventDefault(); });
-  document.getElementById("q-copy").addEventListener("click", function () {
-    var st = document.getElementById("q-status");
-    var done = function (ok) { st.textContent = ok ? (lang === "ar" ? "تم النسخ. الصقها في واتساب على ‎+961 3 295 599 أو أرسلها إلى info@bakhostrading.net" : "Copied. Paste it in WhatsApp to +961 3 295 599 or email it to info@bakhostrading.net") : (lang === "ar" ? "تعذّر النسخ، يُرجى نسخ النص أدناه" : "Couldn't copy; select the text below instead"); document.getElementById("q-preview").classList.add("show"); };
-    try { navigator.clipboard.writeText(quoteText()).then(function () { done(true); }, function () { done(false); }); } catch (e) { done(false); }
-  });
+  function fillSelects() {}
+  function updateQuote() {}
 
   // language
   function applyLang() {
@@ -848,7 +686,7 @@ footer svg { height: 30px; width: auto; color: #fff; --shard: #f0a04b; }
       if (el.hasAttribute("data-html")) el.innerHTML = v; else el.textContent = v;
     });
     document.getElementById("lang").textContent = lang === "ar" ? "English" : "عربي";
-    document.getElementById("ex-wa").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "طلب عرض سعر للتصدير - باخوس للتجارة\nالمنتجات:\nالكميات:\nميناء الوصول:" : "Export quote request - Bakhos Trading\nProducts:\nQuantities:\nDestination port:");
+    var waMsg = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:"); document.querySelectorAll(".wa-link").forEach(function (a) { a.href = waMsg; });
     document.getElementById("wa-float").href = "https://wa.me/" + PHONE + "?text=" + encodeURIComponent(lang === "ar" ? "مرحبًا باخوس للتجارة، أرغب في الاستفسار عن:" : "Hello Bakhos Trading, I would like to ask about:");
     document.title = lang === "ar" ? "باخوس للتجارة – مذيبات وثنر وإيبوكسي | ذوق مصبح، لبنان" : "Bakhos Trading – Solvents, Thinners, Epoxy & Paint Raw Materials | Zouk Mosbeh, Lebanon";
     fillSelects(); updateQuote();
