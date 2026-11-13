@@ -506,6 +506,15 @@ html[lang="ar"] .eyebrow { letter-spacing: 0; font-family: var(--arabic); font-s
 a.tile:hover img { transform: scale(1.04); }
 a.tile { overflow: hidden; }
 .stats b { font-variant-numeric: tabular-nums; }
+
+.mail-wrap { position: relative; }
+.bar-mail { cursor: pointer; font: inherit; font-size: 14px; }
+.mail-menu { position: absolute; top: calc(100% + 8px); inset-inline-end: 0; min-width: 230px; background: #fff; border: 1px solid var(--rule); border-radius: 12px; box-shadow: 0 18px 40px -16px rgba(15,27,45,.35); padding: 6px; z-index: 60; }
+.mail-menu[hidden] { display: none; }
+.mail-addr { font-family: var(--mono); font-size: 12px; color: var(--muted); padding: 8px 12px 6px; user-select: all; -webkit-user-select: all; cursor: text; }
+.mail-menu a, .mail-menu button { display: block; width: 100%; text-align: start; padding: 10px 12px; border-radius: 8px; color: var(--ink); text-decoration: none; font: inherit; font-size: 15px; background: none; border: 0; cursor: pointer; }
+.mail-menu a:hover, .mail-menu button:hover, .mail-menu a:focus-visible, .mail-menu button:focus-visible { background: var(--blue-tint); color: var(--blue); outline: none; }
+@media (max-width: 700px) { .mail-wrap { margin-inline-start: auto; } .bar-mail { margin-inline-start: 0 !important; } }
 </style>
 </head>
 <body>
@@ -519,7 +528,16 @@ a.tile { overflow: hidden; }
       <a href="#facility" data-i="nav_fac">Our yard</a>
       <a href="#contact" data-i="nav_contact">Contact</a>
     </nav>
-    <a class="btn bar-mail" href="mailto:info@bakhostrading.net"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-i="cta_mail">Email us</span></a>
+    <div class="mail-wrap">
+      <button type="button" class="btn bar-mail" id="mail-btn" aria-haspopup="true" aria-expanded="false" aria-controls="mail-menu"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-i="cta_mail">Email us</span></button>
+      <div class="mail-menu" id="mail-menu" role="menu" hidden>
+        <div class="mail-addr">info@bakhostrading.net</div>
+        <a role="menuitem" target="_blank" rel="noopener" href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=info@bakhostrading.net&amp;su=Enquiry%20-%20Bakhos%20Trading" data-i="mail_gmail">Open in Gmail</a>
+        <a role="menuitem" target="_blank" rel="noopener" href="https://outlook.live.com/mail/0/deeplink/compose?to=info@bakhostrading.net&amp;subject=Enquiry%20-%20Bakhos%20Trading" data-i="mail_outlook">Open in Outlook</a>
+        <a role="menuitem" href="mailto:info@bakhostrading.net?subject=Enquiry%20-%20Bakhos%20Trading" data-i="mail_app">Open my email app</a>
+        <button type="button" role="menuitem" id="mail-copy" data-i="mail_copy">Copy address</button>
+      </div>
+    </div>
     <button class="lang" id="lang" type="button" aria-label="Switch language">عربي</button>
   </div>
 </header>
@@ -649,7 +667,7 @@ a.tile { overflow: hidden; }
   <div class="wrap">
     <svg viewBox="0 0 612 354" role="img" aria-label="Bakhos Trading"><use href="#logo"></use></svg>
     <a data-i="foot" href="https://www.google.com/maps/search/?api=1&amp;query=Bakhos%20Trading%20Zouk%20Mosbeh&amp;query_place_id=ChIJI9WeCj0_HxURWGiPu5q2pak" rel="noopener" style="color:inherit">Bakhos Trading · Zouk Mosbeh, Lebanon</a>
-    <span dir="ltr">+961 3 295 599 · +961 4 523 435 · info@bakhostrading.net</span>
+    <span dir="ltr">+961 3 295 599 · +961 4 523 435 · <a href="mailto:info@bakhostrading.net">info@bakhostrading.net</a></span>
     <span><span data-i="est">Since 1996</span> · © <span id="yr">2026</span></span>
   </div>
 </footer>
@@ -664,7 +682,7 @@ a.tile { overflow: hidden; }
   ];
   var AR = {
     qa1: "صحيفة بيانات السلامة (SDS) مع كل شحنة", qa2: "شهادة المنشأ وقائمة التعبئة", qa3: "مخزون متوفر في ذوق مصبح",
-    st5: "كجم من المذيبات سنويًا", cta_wa3: "واتساب", cta_mail: "راسلنا", cta_prod: "تصفّح منتجاتنا", tile_go: "اطلب السعر ↓", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "تواصل معنا ↓",
+    st5: "كجم من المذيبات سنويًا", cta_wa3: "واتساب", cta_mail: "راسلنا", mail_gmail: "فتح في Gmail", mail_outlook: "فتح في Outlook", mail_app: "فتح تطبيق البريد", mail_copy: "نسخ العنوان", cta_prod: "تصفّح منتجاتنا", tile_go: "اطلب السعر ↓", ask1: "لم تجد منتجك؟ نؤمّنه عند الطلب.", ask2: "تواصل معنا ↓",
     seg_h: "نخدم", seg1: "مصانع الدهانات", seg2: "محلات دهان السيارات", seg3: "محلات بيع الدهانات", seg4: "الموزعين", seg5: "المقاولين", seg6: "التصدير",
     eb1: "٠١ · المنتجات", eb2: "٠٢ · المنشأة", eb3: "٠٣ · المصادر", eb4: "٠٤ · التواصل",
     nav_prod: "منتجاتنا", nav_fac: "مقرّنا", nav_contact: "تواصل معنا",
@@ -868,6 +886,23 @@ a.tile { overflow: hidden; }
   document.getElementById("yr").textContent = String(new Date().getFullYear());
   document.getElementById("yrs").textContent = String(new Date().getFullYear() - 1996);
 
+
+  // email menu
+  (function () {
+    var btn = document.getElementById("mail-btn"), menu = document.getElementById("mail-menu"), copy = document.getElementById("mail-copy");
+    if (!btn || !menu) return;
+    function close() { menu.hidden = true; btn.setAttribute("aria-expanded", "false"); }
+    btn.addEventListener("click", function (e) { e.stopPropagation(); var open = menu.hidden; menu.hidden = !open; btn.setAttribute("aria-expanded", String(open)); if (open) { var f = menu.querySelector("a"); if (f) f.focus(); } });
+    document.addEventListener("click", function (e) { if (!menu.contains(e.target)) close(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") { close(); btn.focus(); } });
+    menu.querySelectorAll("a").forEach(function (a) { a.addEventListener("click", function () { setTimeout(close, 50); }); });
+    copy.addEventListener("click", function () {
+      var addr = "info@bakhostrading.net", label = copy.textContent;
+      function done() { copy.textContent = document.documentElement.lang === "ar" ? "تم النسخ ✓" : "Copied ✓"; setTimeout(function () { copy.textContent = label; close(); }, 1200); }
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(done, function () { window.prompt("Email:", addr); });
+      else { window.prompt("Email:", addr); }
+    });
+  })();
   // polish: header shadow, reveal on scroll, count-up
   (function () {
     var bar = document.querySelector(".bar");
